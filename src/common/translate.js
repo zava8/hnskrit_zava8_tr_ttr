@@ -6,9 +6,7 @@ const logDir = "common/translate";
 const getHistory = (sourceWord, sourceLang, targetLang) => {
   const history = translationHistory.find(
     history =>
-      history.sourceWord == sourceWord &&
-      history.sourceLang == sourceLang &&
-      history.targetLang == targetLang &&
+      history.sourceWord == sourceWord && history.sourceLang == sourceLang && history.targetLang == targetLang &&
       history.result.statusText == "OK"
   );
   return history;
@@ -16,15 +14,12 @@ const getHistory = (sourceWord, sourceLang, targetLang) => {
 
 const setHistory = (sourceWord, sourceLang, targetLang, formattedResult) => {
   translationHistory.push({
-    sourceWord: sourceWord,
-    sourceLang: sourceLang,
-    targetLang: targetLang,
+    sourceWord: sourceWord, sourceLang: sourceLang, targetLang: targetLang,
     result: formattedResult
   });
 };
 
-const sendRequest = (word, sourceLang, targetLang) => {
-  log.log(logDir, "sendRequest()");
+const sendRequest = (word, sourceLang, targetLang) => { log.log(logDir, "sendRequest()");
   const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sourceLang}&tl=${targetLang}&dt=t&dt=bd&dj=1&q=${encodeURIComponent(
     word
   )}`;
@@ -77,16 +72,9 @@ const formatResult = result => {
 };
 
 export default async (sourceWord, sourceLang = "auto", targetLang) => {
-  log.log(logDir, "tranlate()", sourceWord, targetLang);
+  log.log(logDir, "translate()", sourceWord, targetLang);
   sourceWord = sourceWord.trim();
-  if (sourceWord === "")
-    return {
-      resultText: "",
-      candidateText: "",
-      sourceLanguage: "en",
-      percentage: 0,
-      statusText: "OK"
-    };
+  if (sourceWord === "") return { resultText: "", candidateText: "", sourceLanguage: "en", percentage: 0, statusText: "OK" };
 
   const history = getHistory(sourceWord, sourceLang, targetLang);
   if (history) return history.result;

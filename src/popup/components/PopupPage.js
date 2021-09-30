@@ -9,51 +9,32 @@ import InputArea from "./InputArea";
 import ResultArea from "./ResultArea";
 import Footer from "./Footer";
 import "../styles/PopupPage.scss";
-
 const logDir = "popup/PopupPage";
-
 const getTabInfo = async () => {
   try {
     const tab = (await browser.tabs.query({ currentWindow: true, active: true }))[0];
     const tabUrl = browser.tabs.sendMessage(tab.id, { message: "getTabUrl" });
     const selectedText = browser.tabs.sendMessage(tab.id, { message: "getSelectedText" });
     const isEnabledOnPage = browser.tabs.sendMessage(tab.id, { message: "getEnabled" });
-
     const tabInfo = await Promise.all([tabUrl, selectedText, isEnabledOnPage]);
     return {
-      isConnected: true,
-      url: tabInfo[0],
-      selectedText: tabInfo[1],
-      isEnabledOnPage: tabInfo[2]
+      isConnected: true, url: tabInfo[0], selectedText: tabInfo[1], isEnabledOnPage: tabInfo[2]
     };
-  } catch (e) {
-    return { isConnected: false, url: "", selectedText: "", isEnabledOnPage: false };
-  }
+  } catch (e) { return { isConnected: false, url: "", selectedText: "", isEnabledOnPage: false }; }
 };
 
 export default class PopupPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      targetLang: "",
-      inputText: "",
-      resultText: "",
-      candidateText: "",
-      sourceLang: "",
-      statusText: "OK",
-      tabUrl: "",
-      isConnected: true,
+  constructor(props) { super(props);
+    this.state = { targetLang: "", inputText: "", resultText: "", candidateText: "",
+      sourceLang: "", statusText: "OK", tabUrl: "", isConnected: true,
       isEnabledOnPage: true,
       langHistory: []
     };
     this.isSwitchedSecondLang = false;
     this.init();
   }
-
   init = async () => {
-    await initSettings();
-    overWriteLogLevel();
-    updateLogLevel();
+    await initSettings(); overWriteLogLevel(); updateLogLevel();
 
     document.body.dataset.theme = getSettings("theme");
     const targetLang = getSettings("targetLang");
@@ -63,10 +44,7 @@ export default class PopupPage extends Component {
       langHistory = [targetLang, secondLang];
       setSettings("langHistory", langHistory);
     }
-    this.setState({
-      targetLang: targetLang,
-      langHistory: langHistory
-    });
+    this.setState({ targetLang: targetLang, langHistory: langHistory });
 
     const tabInfo = await getTabInfo();
     this.setState({
@@ -78,10 +56,8 @@ export default class PopupPage extends Component {
     if (tabInfo.selectedText !== "") this.handleInputText(tabInfo.selectedText);
   };
 
-  handleInputText = inputText => {
-    log.log(logDir, "handleInputText()", inputText);
-    this.setState({ inputText: inputText });
-
+  handleInputText = inputText => { log.log(logDir, "handleInputText()", inputText);
+  this.setState({ inputText: inputText });
     const waitTime = getSettings("waitTime");
     clearTimeout(this.inputTimer);
     this.inputTimer = setTimeout(async () => {
@@ -106,13 +82,10 @@ export default class PopupPage extends Component {
     this.setLangHistory(lang);
   };
 
-  translateText = async (text, targetLang) => {
-    log.info(logDir, "translateText()", text, targetLang);
+  translateText = async (text, targetLang) => { log.info(logDir, "translateText()", text, targetLang);
     const result = await translate(text, "auto", targetLang);
     this.setState({
-      resultText: result.resultText,
-      candidateText: result.candidateText,
-      statusText: result.statusText,
+      resultText: result.resultText, candidateText: result.candidateText, statusText: result.statusText,
       sourceLang: result.sourceLanguage
     });
     return result;
@@ -120,33 +93,21 @@ export default class PopupPage extends Component {
 
   switchSecondLang = result => {
     if (!getSettings("ifChangeSecondLang")) return;
-
-    const defaultTargetLang = getSettings("targetLang");
-    const secondLang = getSettings("secondTargetLang");
+    const defaultTargetLang = getSettings("targetLang"); const secondLang = getSettings("secondTargetLang");
     if (defaultTargetLang === secondLang) return;
-
-    const equalsSourceAndTarget =
-      result.sourceLanguage === this.state.targetLang && result.percentage > 0;
-    const equalsSourceAndDefault =
-      result.sourceLanguage === defaultTargetLang && result.percentage > 0;
-
+    const equalsSourceAndTarget = result.sourceLanguage === this.state.targetLang && result.percentage > 0;
+    const equalsSourceAndDefault = result.sourceLanguage === defaultTargetLang && result.percentage > 0;
     if (!this.isSwitchedSecondLang) {
-      if (equalsSourceAndTarget && equalsSourceAndDefault) {
-        log.info(logDir, "=>switchSecondLang()", result, secondLang);
-        this.handleLangChange(secondLang);
-        this.isSwitchedSecondLang = true;
+      if (equalsSourceAndTarget && equalsSourceAndDefault) { log.info(logDir, "=>switchSecondLang()", result, secondLang);
+        this.handleLangChange(secondLang); this.isSwitchedSecondLang = true;
       }
     } else {
-      if (!equalsSourceAndDefault) {
-        log.info(logDir, "=>switchSecondLang()", result, defaultTargetLang);
-        this.handleLangChange(defaultTargetLang);
-        this.isSwitchedSecondLang = false;
+      if (!equalsSourceAndDefault) { log.info(logDir, "=>switchSecondLang()", result, defaultTargetLang);
+        this.handleLangChange(defaultTargetLang); this.isSwitchedSecondLang = false;
       }
     }
   };
-
-  toggleEnabledOnPage = async e => {
-    const isEnabled = e.target.checked;
+  toggleEnabledOnPage = async e => { const isEnabled = e.target.checked; 
     this.setState({ isEnabledOnPage: isEnabled });
     try {
       const tab = (await browser.tabs.query({ currentWindow: true, active: true }))[0];
@@ -158,30 +119,17 @@ export default class PopupPage extends Component {
   render() {
     return (
       <div>
-        <Header
-          toggleEnabledOnPage={this.toggleEnabledOnPage}
-          isEnabledOnPage={this.state.isEnabledOnPage}
+        <Header toggleEnabledOnPage={this.toggleEnabledOnPage} isEnabledOnPage={this.state.isEnabledOnPage}
           isConnected={this.state.isConnected}
         />
-        <InputArea
-          inputText={this.state.inputText}
-          handleInputText={this.handleInputText}
-          sourceLang={this.state.sourceLang}
-        />
+        <InputArea inputText={this.state.inputText} handleInputText={this.handleInputText} sourceLang={this.state.sourceLang} />
         <hr />
-        <ResultArea
-          inputText={this.state.inputText}
-          targetLang={this.state.targetLang}
-          resultText={this.state.resultText}
-          candidateText={this.state.candidateText}
+        <ResultArea inputText={this.state.inputText} targetLang={this.state.targetLang}
+          resultText={this.state.resultText} candidateText={this.state.candidateText}
           statusText={this.state.statusText}
         />
-        <Footer
-          tabUrl={this.state.tabUrl}
-          targetLang={this.state.targetLang}
-          langHistory={this.state.langHistory}
-          handleLangChange={this.handleLangChange}
-        />
+        <Footer tabUrl={this.state.tabUrl} targetLang={this.state.targetLang}
+          langHistory={this.state.langHistory} handleLangChange={this.handleLangChange} />
       </div>
     );
   }

@@ -31,12 +31,7 @@ export default props => {
       formId = id;
       optionForm = (
         <label>
-          <input
-            type="checkbox"
-            id={formId}
-            onChange={handleCheckedChange}
-            defaultChecked={getSettings(id)}
-          />
+          <input type="checkbox" id={formId} onChange={handleCheckedChange} defaultChecked={getSettings(id)} />
           <span className="checkbox" />
         </label>
       );
@@ -59,39 +54,20 @@ export default props => {
     case "text":
       formId = id;
       optionForm = (
-        <input
-          type="text"
-          id={formId}
-          placeholder={props.placeholder}
-          onChange={handleValueChange}
-          defaultValue={getSettings(id)}
-        />
+        <input type="text" id={formId} placeholder={props.placeholder} onChange={handleValueChange} defaultValue={getSettings(id)} />
       );
       break;
     case "textarea":
       formId = id;
       optionForm = (
-        <textarea
-          id={formId}
-          spellCheck={false}
-          placeholder={props.placeholder}
-          onChange={handleValueChange}
-          defaultValue={getSettings(id)}
-        />
+        <textarea id={formId} spellCheck={false} placeholder={props.placeholder} onChange={handleValueChange} defaultValue={getSettings(id)} />
       );
       break;
     case "radio":
       formId = `${id}_${props.value}`;
       optionForm = (
         <label>
-          <input
-            type="radio"
-            id={formId}
-            name={id}
-            value={props.value}
-            onChange={handleValueChange}
-            defaultChecked={props.value === getSettings(id) ? "checked" : ""}
-          />
+          <input type="radio" id={formId} name={id} value={props.value} onChange={handleValueChange} defaultChecked={props.value === getSettings(id) ? "checked" : ""} />
           <span className="radio" />
         </label>
       );
@@ -100,12 +76,7 @@ export default props => {
       formId = id;
       optionForm = (
         <label>
-          <input
-            type="color"
-            id={formId}
-            onChange={handleValueChange}
-            defaultValue={getSettings(id)}
-          />
+          <input type="color" id={formId} onChange={handleValueChange} defaultValue={getSettings(id)} />
         </label>
       );
       break;
