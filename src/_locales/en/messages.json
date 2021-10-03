@@ -21,7 +21,10 @@
     "message": "Enter text"
   },
   "showLink": {
-    "message": "Translate this page"
+    "message": "go"
+  },
+  "shokod": {
+    "message": "kod"
   },
   "openInGoogleLabel": {
     "message": "Open in Google Translate"

@@ -27,34 +27,31 @@ export default class Footer extends Component {
 
     return (
       <div id="footer">
-        <div className="translateLink">
-          {tabUrl && <a onClick={this.handleLinkClick}>{browser.i18n.getMessage("showLink")}</a>}
-        </div>
         <div className="selectWrap">
-          <select
-            id="langList"
-            value={targetLang}
-            onChange={this.handleChange}
-            title={browser.i18n.getMessage("targetLangLabel")}
-          >
-
+          <select id="langList" value={targetLang} onChange={this.handleChange} title={browser.i18n.getMessage("targetLangLabel")} >
             <optgroup label={browser.i18n.getMessage("recentLangLabel")}>
               {this.langList.filter(option => langHistory.includes(option.value))
-                .map(option => (
-                  <option value={option.value} key={option.value}>
-                    {option.name}
-                  </option>
-                ))}
+                .map(option => ( <option value={option.value} key={option.value}> {option.name} </option> ))}
             </optgroup>
             <optgroup label={browser.i18n.getMessage("allLangLabel")}>
-              {this.langList.map(option => (
-                <option value={option.value} key={option.value}>
-                  {option.name}
-                </option>
-              ))}
+              {this.langList.map(option => ( <option value={option.value} key={option.value}> {option.name} </option> ))}
             </optgroup>
           </select>
         </div>
+        <div className="selectWrap">
+          <select id="kod_slekt_id" value="aski5">
+            <optgroup label="hski8">
+              <option value="abc8">abc8</option>
+              <option value="abc8_u8z">abc8_u8z</option>
+              <option value="hinwi8">hinwi8</option>
+            </optgroup>
+            <optgroup label="aski5"><option value="aski5">ascii5</option></optgroup>
+            <optgroup label="unikod5"><option value="unikod5">unicode5</option></optgroup>
+          </select>
+        </div>
+        <div className="translateLink">
+          {tabUrl && <a onClick={this.handleLinkClick}>{browser.i18n.getMessage("showLink")}</a>}
+        </div>             
       </div>
     );
   }
