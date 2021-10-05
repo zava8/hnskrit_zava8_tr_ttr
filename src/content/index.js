@@ -47,31 +47,17 @@ const handleMouseUp = async e => {
   const selectedText = getSelectedText();
   prevSelectedText = selectedText;
   if (selectedText.length === 0) return;
-
-  if (getSettings("isDisabledInTextFields")) {
-    if (isInContentEditable()) return;
-  }
-
+  if (getSettings("isDisabledInTextFields")) { if (isInContentEditable()) return; }
   if (getSettings("ifOnlyTranslateWhenModifierKeyPressed")) {
     const modifierKey = getSettings("modifierKey");
     switch (modifierKey) {
-      case "shift":
-        if (!e.shiftKey) return;
-        break;
-      case "alt":
-        if (!e.altKey) return;
-        break;
-      case "ctrl":
-        if (!e.ctrlKey) return;
-        break;
-      case "cmd":
-        if (!e.metaKey) return;
-        break;
-      default:
-        break;
+      case "shift": if (!e.shiftKey) return; break;
+      case "alt": if (!e.altKey) return; break;
+      case "ctrl": if (!e.ctrlKey) return; break;
+      case "cmd": if (!e.metaKey) return; break;
+      default: break;
     }
   }
-
   const clickedPosition = { x: e.clientX, y: e.clientY };
   const selectedPosition = getSelectedPosition();
   showTranslateContainer(selectedText, selectedPosition, clickedPosition);
@@ -95,10 +81,7 @@ const getSelectedPosition = () => {
   const isInTextField = element.tagName === "INPUT" || element.tagName === "TEXTAREA";
   const selectedRect = isInTextField
     ? element.getBoundingClientRect()
-    : window
-      .getSelection()
-      .getRangeAt(0)
-      .getBoundingClientRect();
+    : window .getSelection() .getRangeAt(0) .getBoundingClientRect();
 
   let selectedPosition;
   const panelReferencePoint = getSettings("panelReferencePoint");
@@ -168,23 +151,15 @@ const handleMessage = async request => {
     case "enableExtension":
       isEnabled = true;
       break;
-    case "disableExtension":
-      removeTranslatecontainer();
-      isEnabled = false;
-      break;
-    default:
-      return empty;
+    case "disableExtension": removeTranslatecontainer(); isEnabled = false; break;
+    default: return empty;
   }
 };
 
 const disableExtensionByUrlList = () => {
   const disableUrls = getSettings("disableUrlList").split("\n");
   let pageUrl;
-  try {
-    pageUrl = top.location.href;
-  } catch (e) {
-    pageUrl = document.referrer;
-  }
+  try { pageUrl = top.location.href; } catch (e) { pageUrl = document.referrer; }
 
   const matchesPageUrl = urlPattern => {
     const pattern = urlPattern
@@ -198,33 +173,17 @@ const disableExtensionByUrlList = () => {
   if (isMatched) isEnabled = false;
 };
 
-const removeTranslatecontainer = async () => {
-  const element = document.getElementById("simple-translate");
-  if (!element) return;
-
+const removeTranslatecontainer = async () => { const element = document.getElementById("simple-translate"); if (!element) return;
   ReactDOM.unmountComponentAtNode(element);
   element.parentNode.removeChild(element);
 };
 
-const showTranslateContainer = (
-  selectedText,
-  selectedPosition,
-  clickedPosition = null,
-  shouldTranslate = false
-) => {
-  const element = document.getElementById("simple-translate");
-  if (element) return;
-  if (!isEnabled) return;
-
+const showTranslateContainer = ( selectedText, selectedPosition, clickedPosition = null, shouldTranslate = false ) => {
+  const element = document.getElementById("simple-translate"); if (element) return; if (!isEnabled) return;
   document.body.insertAdjacentHTML("beforeend", "<div id='simple-translate'></div>");
-  ReactDOM.render(
-    <TranslateContainer
-      removeContainer={removeTranslatecontainer}
-      selectedText={selectedText}
-      selectedPosition={selectedPosition}
-      clickedPosition={clickedPosition}
+  ReactDOM.render( <TranslateContainer
+      removeContainer={removeTranslatecontainer} selectedText={selectedText}
+      selectedPosition={selectedPosition} clickedPosition={clickedPosition}
       shouldTranslate={shouldTranslate}
-    />,
-    document.getElementById("simple-translate")
-  );
+    />, document.getElementById("simple-translate") );
 };

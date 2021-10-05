@@ -10,19 +10,11 @@ const splitLine = text => {
   return text.split(regex).map((line, i) => (line.match(regex) ? <br key={i} /> : line));
 };
 
-export default class TranslatePanel extends Component {
-  constructor(props) {
-    super(props);
+export default class TranslatePanel extends Component { constructor(props) { super(props);
     this.state = {
-      panelPosition: { x: 0, y: 0 },
-      panelWidth: 0,
-      panelHeight: 0,
-      shouldResize: true,
-      isOverflow: false
+      panelPosition: { x: 0, y: 0 }, panelWidth: 0, panelHeight: 0, shouldResize: true, isOverflow: false
     };
-
-    this.dragOffsets = { x: 0, y: 0 };
-    this.isDragging = false;
+    this.dragOffsets = { x: 0, y: 0 }; this.isDragging = false;
   }
 
   componentDidMount = () => {

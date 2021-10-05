@@ -31,10 +31,7 @@ const formatResult = result => {
   else if (result.status === 503) resultData.statusText = "Service Unavailable";
   else resultData.statusText = result.statusText || result.status;
 
-  if (resultData.statusText !== "OK") {
-    log.error(logDir, "formatResult()", resultData);
-    return resultData;
-  }
+  if (resultData.statusText !== "OK") { log.error(logDir, "formatResult()", resultData); return resultData; }
 
   resultData.sourceLanguage = result.response.src;
   resultData.percentage = result.response.ld_result.srclangs_confidences[0];

@@ -5,11 +5,7 @@ import openUrl from "src/common/openUrl";
 import "../styles/Footer.scss";
 
 export default class Footer extends Component {
-  constructor(props) {
-    super(props);
-    this.langList = generateLangOptions();
-  }
-
+  constructor(props) { super(props); this.langList = generateLangOptions(); }
   handleLinkClick = async () => {
     const { tabUrl, targetLang } = this.props;
     const encodedUrl = encodeURIComponent(tabUrl);
@@ -17,10 +13,7 @@ export default class Footer extends Component {
     openUrl(translateUrl);
   };
 
-  handleChange = e => {
-    const lang = e.target.value;
-    this.props.handleLangChange(lang);
-  };
+  handleChange = e => { const lang = e.target.value; this.props.handleLangChange(lang); };
 
   render() {
     const { tabUrl, targetLang, langHistory } = this.props;
@@ -43,10 +36,13 @@ export default class Footer extends Component {
             <optgroup label="hski8">
               <option value="abc8">abc8</option>
               <option value="abc8_u8z">abc8_u8z</option>
-              <option value="hinwi8">hinwi8</option>
             </optgroup>
-            <optgroup label="aski5"><option value="aski5">ascii5</option></optgroup>
-            <optgroup label="unikod5"><option value="unikod5">unicode5</option></optgroup>
+            <optgroup label="aski5">
+              <option value="abc5">abc5</option>
+            </optgroup>
+            <optgroup label="unikod5">
+              <option value="unikod5">unicode5</option>
+            </optgroup>
           </select>
         </div>
         <div className="translateLink">

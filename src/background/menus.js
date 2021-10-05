@@ -23,19 +23,11 @@ export const onMenusShownListener = (info, tab) => {
   browser.contextMenus.refresh();
 };
 
-export const onMenusClickedListener = (info, tab) => {
-  log.log(logDir, "onMenusClickedListener()", info, tab);
+export const onMenusClickedListener = (info, tab) => { log.log(logDir, "onMenusClickedListener()", info, tab);
   switch (info.menuItemId) {
-    case "translatePage":
-    case "translatePageOnTab":
-      translatePage(info, tab);
-      break;
-    case "translateText":
-      translateText(tab);
-      break;
-    case "translateLink":
-      translateLink(info, tab);
-      break;
+    case "translatePage": case "translatePageOnTab": translatePage(info, tab); break;
+    case "translateText": translateText(tab); break;
+    case "translateLink": translateLink(info, tab); break;
   }
 };
 
@@ -82,22 +74,12 @@ function translatePage(info, tab) {
   const targetLang = getSettings("targetLang");
   const encodedPageUrl = encodeURIComponent(info.pageUrl);
   const translationUrl = `https://translate.google.com/translate?hl=${targetLang}&tl=${targetLang}&sl=auto&u=${encodedPageUrl}`;
-
-  browser.tabs.create({
-    url: translationUrl,
-    active: true,
-    index: tab.index + 1
-  });
+  browser.tabs.create({ url: translationUrl, active: true, index: tab.index + 1 });
 }
 
 function translateLink(info, tab) {
   const targetLang = getSettings("targetLang");
   const encodedLinkUrl = encodeURIComponent(info.linkUrl);
   const translationUrl = `https://translate.google.com/translate?hl=${targetLang}&tl=${targetLang}&sl=auto&u=${encodedLinkUrl}`;
-
-  browser.tabs.create({
-    url: translationUrl,
-    active: true,
-    index: tab.index + 1
-  });
+  browser.tabs.create({ url: translationUrl, active: true, index: tab.index + 1 });
 }

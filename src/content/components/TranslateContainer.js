@@ -13,12 +13,10 @@ const translateText = async (text, targetLang = getSettings("targetLang")) => {
 
 const matchesTargetLang = async selectedText => {
   const targetLang = getSettings("targetLang");
-  //detectLanguageで判定
   const langInfo = await browser.i18n.detectLanguage(selectedText);
   const matchsLangsByDetect = langInfo.isReliable && langInfo.languages[0].language === targetLang;
   if (matchsLangsByDetect) return true;
 
-  //先頭100字を翻訳にかけて判定
   const partSelectedText = selectedText.substring(0, 100);
   const result = await translateText(partSelectedText);
   const isError = result.statusText !== "OK";
@@ -31,21 +29,10 @@ const matchesTargetLang = async selectedText => {
   return matchsLangs;
 };
 
-export default class TranslateContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      shouldShowButton: false,
-      buttonPosition: { x: 0, y: 0 },
-      shouldShowPanel: false,
-      panelPosition: { x: 0, y: 0 },
-      currentLang: getSettings("targetLang"),
-      resultText: "",
-      candidateText: "",
-      statusText: "OK"
-    };
-    this.selectedText = props.selectedText;
-    this.selectedPosition = props.selectedPosition;
+export default class TranslateContainer extends Component { constructor(props) { super(props);
+    this.state = { shouldShowButton: false, buttonPosition: { x: 0, y: 0 }, shouldShowPanel: false,
+      panelPosition: { x: 0, y: 0 }, currentLang: getSettings("targetLang"), resultText: "", candidateText: "", statusText: "OK" };
+    this.selectedText = props.selectedText; this.selectedPosition = props.selectedPosition;
   }
 
   componentDidMount = () => {
@@ -110,11 +97,7 @@ export default class TranslateContainer extends Component {
   render = () => {
     return (
       <div>
-        <TranslateButton
-          shouldShow={this.state.shouldShowButton}
-          position={this.state.buttonPosition}
-          handleButtonClick={this.handleButtonClick}
-        />
+        <TranslateButton shouldShow={this.state.shouldShowButton} position={this.state.buttonPosition} handleButtonClick={this.handleButtonClick} />
         <TranslatePanel
           shouldShow={this.state.shouldShowPanel}
           position={this.state.panelPosition}

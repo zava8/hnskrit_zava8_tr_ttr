@@ -5,6 +5,8 @@ import { getSettings } from "src/settings/settings";
 import openUrl from "src/common/openUrl";
 import CopyButton from "./CopyButton";
 import ListenButton from "./ListenButton";
+import transliterator from "src/common/transliterator"
+import zabc_list_dict from "src/common/zabc"
 import "../styles/ResultArea.scss";
 
 const splitLine = text => {
@@ -16,6 +18,8 @@ export default props => {
   const { resultText, candidateText, statusText, targetLang } = props;
   const isError = statusText !== "OK";
   const shouldShowCandidate = getSettings("ifShowCandidate");
+  var t = new transliterator();
+  const ztrText = t.transliterate_indik_abc(resultText, zabc_list_dict);
 
   const handleLinkClick = () => {
     const { inputText, targetLang } = props;
@@ -26,7 +30,7 @@ export default props => {
 
   return (
     <div id="resultArea">
-      <p className="resultText" dir="auto">{splitLine(resultText)}</p>
+      <p className="resultText" dir="auto">{splitLine(ztrText)}</p>
       {shouldShowCandidate && <p className="candidateText" dir="auto">{splitLine(candidateText)}</p>}
       {isError && <p className="error">{getErrorMessage(statusText)}</p>}
       {isError && (
@@ -34,10 +38,7 @@ export default props => {
           <a onClick={handleLinkClick}>{browser.i18n.getMessage("openInGoogleLabel")}</a>
         </p>
       )}
-      <div className="mediaButtons">
-        <CopyButton text={resultText} />
-        <ListenButton text={resultText} lang={targetLang} />
-      </div>
+      {/* <div className="mediaButtons"> <CopyButton text={resultText} /> <ListenButton text={resultText} lang={targetLang} /> </div> */}
     </div>
   );
 };

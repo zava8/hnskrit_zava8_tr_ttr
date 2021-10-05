@@ -128,6 +128,7 @@ export default class PopupPage extends Component {
           resultText={this.state.resultText} candidateText={this.state.candidateText}
           statusText={this.state.statusText}
         />
+        {/* <ZtrArea resultText={this.state.resultText} /> */}
         <Footer tabUrl={this.state.tabUrl} targetLang={this.state.targetLang}
           langHistory={this.state.langHistory} handleLangChange={this.handleLangChange} />
       </div>
