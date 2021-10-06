@@ -38,7 +38,7 @@ export default props => {
           <a onClick={handleLinkClick}>{browser.i18n.getMessage("openInGoogleLabel")}</a>
         </p>
       )}
-      {/* <div className="mediaButtons"> <CopyButton text={resultText} /> <ListenButton text={resultText} lang={targetLang} /> </div> */}
+      <div className="mediaButtons"> <CopyButton text={ztrText} /> <ListenButton text={ztrText} lang="en" /> </div>
     </div>
   );
 };
