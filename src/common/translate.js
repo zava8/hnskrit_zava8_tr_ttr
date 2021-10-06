@@ -1,6 +1,9 @@
 import log from "loglevel";
+import transliterator from "src/common/transliterator"
+import zabc_list_dict from "src/common/zabc"
 let translationHistory = [];
 const logDir = "common/translate";
+
 const getHistory = (sourceWord, sourceLang, targetLang) => {
   const history = translationHistory.find(
     history =>

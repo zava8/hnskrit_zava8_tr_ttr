@@ -15,11 +15,11 @@ const splitLine = text => {
 };
 
 export default props => {
-  const { resultText, candidateText, statusText, targetLang } = props;
+  const { inputText, targetLang, langZtr, ztrText, candidateText, statusText } = props;
   const isError = statusText !== "OK";
   const shouldShowCandidate = getSettings("ifShowCandidate");
-  var t = new transliterator();
-  const ztrText = t.transliterate_indik_abc(resultText, zabc_list_dict);
+  // var t = new transliterator();
+  // ztrText = resultText + "\n" + t.transliterate_indik_abc(resultText, zabc_list_dict);
 
   const handleLinkClick = () => {
     const { inputText, targetLang } = props;

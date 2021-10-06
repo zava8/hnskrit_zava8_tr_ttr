@@ -1,6 +1,6 @@
 {
   "targetLang": "hi",
-  "secondTargetLang": "id",
+  "secondTargetLang": "ml",
   "ifShowCandidate": true,
   "whenSelectText": "showPanel",
   "ifCheckLang": true,
@@ -28,5 +28,5 @@
   "candidateFontColor": "#737373",
   "bgColor": "#ffffff",
   "isShowOptionsPageWhenUpdated": true,
-  "isDebugMode": true
+  "isDebugMode": false
 }

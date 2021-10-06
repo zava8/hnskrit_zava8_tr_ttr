@@ -7,16 +7,17 @@ import "../styles/Footer.scss";
 export default class Footer extends Component {
   constructor(props) { super(props); this.langList = generateLangOptions(); }
   handleLinkClick = async () => {
-    const { tabUrl, targetLang } = this.props;
+    const { tabUrl, targetLang} = this.props;
     const encodedUrl = encodeURIComponent(tabUrl);
     const translateUrl = `https://translate.google.com/translate?hl=${targetLang}&tl=${targetLang}&sl=auto&u=${encodedUrl}`;
     openUrl(translateUrl);
   };
 
   handleChange = e => { const lang = e.target.value; this.props.handleLangChange(lang); };
+  handleZtrChange = e => { const ztr = e.target.value; this.props.handleZtrChange(ztr); };
 
   render() {
-    const { tabUrl, targetLang, langHistory } = this.props;
+    const { tabUrl, targetLang, langZtr, langHistory } = this.props;
 
     return (
       <div id="footer">
@@ -32,7 +33,7 @@ export default class Footer extends Component {
           </select>
         </div>
         <div className="selectWrap">
-          <select id="kod_slekt_id" value="aski5">
+          <select id="ztrList" onChange={this.handleZtrChange}>
             <optgroup label="hski8">
               <option value="abc8">abc8</option>
               <option value="abc8_u8z">abc8_u8z</option>
@@ -41,7 +42,7 @@ export default class Footer extends Component {
               <option value="abc5">abc5</option>
             </optgroup>
             <optgroup label="unikod5">
-              <option value="unikod5">unicode5</option>
+              <option value="unikod5">unikod5</option>
             </optgroup>
           </select>
         </div>
