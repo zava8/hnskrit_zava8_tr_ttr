@@ -3,6 +3,8 @@ import browser from "webextension-polyfill";
 import generateLangOptions from "src/common/generateLangOptions";
 import openUrl from "src/common/openUrl";
 import "../styles/Footer.scss";
+import transliterator from "src/common/transliterator"
+import zabc_list_dict from "src/common/zabc"
 
 export default class Footer extends Component {
   constructor(props) { super(props); this.langList = generateLangOptions(); }
@@ -12,9 +14,16 @@ export default class Footer extends Component {
     const translateUrl = `https://translate.google.com/translate?hl=${targetLang}&tl=${targetLang}&sl=auto&u=${encodedUrl}`;
     openUrl(translateUrl);
   };
-
+  handleZtrLinkClick = () => {
+    //alert(document.body);
+    var t = new transliterator();
+    t.transliterate_elem_content(document.body);
+  };
   handleChange = e => { const lang = e.target.value; this.props.handleLangChange(lang); };
-  handleZtrChange = e => { const ztr = e.target.value; this.props.handleZtrChange(ztr); };
+  handleZtrChange = e => { 
+    const ztr = e.target.value;
+    this.props.handleZtrChange(ztr);
+  };
 
   render() {
     const { tabUrl, targetLang, langZtr, langHistory } = this.props;
@@ -32,6 +41,9 @@ export default class Footer extends Component {
             </optgroup>
           </select>
         </div>
+        <div className="translateLink">
+          {tabUrl && <a onClick={this.handleLinkClick}>{browser.i18n.getMessage("showLink")}</a>}
+        </div>
         <div className="selectWrap">
           <select id="ztrList" onChange={this.handleZtrChange}>
             <optgroup label="hski8">
@@ -47,7 +59,7 @@ export default class Footer extends Component {
           </select>
         </div>
         <div className="translateLink">
-          {tabUrl && <a onClick={this.handleLinkClick}>{browser.i18n.getMessage("showLink")}</a>}
+          {tabUrl && <a onClick={this.handleZtrLinkClick}>{browser.i18n.getMessage("showLink")}</a>}
         </div>             
       </div>
     );

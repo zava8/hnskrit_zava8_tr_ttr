@@ -5,6 +5,8 @@ import { getSettings } from "src/settings/settings";
 import TranslateButton from "./TranslateButton";
 import TranslatePanel from "./TranslatePanel";
 import "../styles/TranslateContainer.scss";
+import transliterator from "src/common/transliterator"
+import zabc_list_dict from "src/common/zabc"
 
 const translateText = async (text, targetLang = getSettings("targetLang")) => {
   const result = await translate(text, "auto", targetLang);
@@ -29,10 +31,12 @@ const matchesTargetLang = async selectedText => {
   return matchsLangs;
 };
 
-export default class TranslateContainer extends Component { constructor(props) { super(props);
+export default class TranslateContainer extends Component {
+  constructor(props) { super(props);
     this.state = { shouldShowButton: false, buttonPosition: { x: 0, y: 0 }, shouldShowPanel: false,
       panelPosition: { x: 0, y: 0 }, currentLang: getSettings("targetLang"), resultText: "", candidateText: "", statusText: "OK" };
     this.selectedText = props.selectedText; this.selectedPosition = props.selectedPosition;
+    this.t = new transliterator();
   }
 
   componentDidMount = () => {
@@ -80,10 +84,12 @@ export default class TranslateContainer extends Component { constructor(props) {
       result.sourceLanguage === targetLang && result.percentage > 0 && targetLang !== secondLang;
     if (shouldSwitchSecondLang) result = await translateText(this.selectedText, secondLang);
 
+    const ztrText = this.t.transliterate_indik_abc(result.resultText, zabc_list_dict);
+    // alert("ztrText is " + ztrText);
     this.setState({
       shouldShowPanel: true,
       panelPosition: panelPosition,
-      resultText: result.resultText,
+      resultText: ztrText, //result.resultText,
       candidateText: getSettings("ifShowCandidate") ? result.candidateText : "",
       statusText: result.statusText,
       currentLang: shouldSwitchSecondLang ? secondLang : targetLang

@@ -28,5 +28,5 @@
   "candidateFontColor": "#737373",
   "bgColor": "#ffffff",
   "isShowOptionsPageWhenUpdated": true,
-  "isDebugMode": false
+  "isDebugMode": true
 }

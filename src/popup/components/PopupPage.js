@@ -100,6 +100,8 @@ export default class PopupPage extends Component {
       var t = new transliterator();
       const ztrText = t.transliterate_indik_abc(this.state.resultText, zabc_list_dict);// + "\n" + this.state.resultText ;      
       this.setState({ langZtr: ztr, ztrText: ztrText });
+      // alert("vvv");
+      // t.transliterate_elem_content(document.body);
     }
     return ztrText;
   }
