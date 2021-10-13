@@ -22,9 +22,7 @@ const addListeners = () => {
 
 const init = async () => {
   await initSettings();
-  overWriteLogLevel();
-  updateLogLevel();
-  log.info(logDir, "init()");
+  overWriteLogLevel(); updateLogLevel(); log.info(logDir, "init()");
   addListeners();
   showMenus();
 };

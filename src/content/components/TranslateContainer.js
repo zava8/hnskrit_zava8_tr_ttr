@@ -85,7 +85,6 @@ export default class TranslateContainer extends Component {
     if (shouldSwitchSecondLang) result = await translateText(this.selectedText, secondLang);
 
     const ztrText = this.t.transliterate_indik_abc(result.resultText, zabc_list_dict);
-    // alert("ztrText is " + ztrText);
     this.setState({
       shouldShowPanel: true,
       panelPosition: panelPosition,

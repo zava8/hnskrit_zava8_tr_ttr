@@ -28,7 +28,7 @@ const getTabInfo = async () => {
 
 export default class PopupPage extends Component {
   constructor(props) { super(props);
-    this.state = { targetLang: "", langZtr: "", inputText: "", resultText: "", ztrText: "",  candidateText: "",
+    this.state = { targetLang: "", targetZtr: "", inputText: "", resultText: "", ztrText: "",  candidateText: "",
       sourceLang: "", statusText: "OK", tabUrl: "", isConnected: true,
       isEnabledOnPage: true,
       langHistory: []
@@ -46,7 +46,7 @@ export default class PopupPage extends Component {
       langHistory = [targetLang, secondLang];
       setSettings("langHistory", langHistory);
     }
-    this.setState({ targetLang: targetLang, langZtr: "abc5", langHistory: langHistory });
+    this.setState({ targetLang: targetLang, targetZtr: "", langHistory: langHistory });
 
     const tabInfo = await getTabInfo();
     this.setState({ isConnected: tabInfo.isConnected, inputText: tabInfo.selectedText, tabUrl: tabInfo.url,
@@ -76,10 +76,10 @@ export default class PopupPage extends Component {
   handleLangChange = lang => { log.info(logDir, "handleLangChange()", lang);
     this.setState({ targetLang: lang });
     const inputText = this.state.inputText;
-    if (inputText !== "") this.translateText(inputText, lang, langZtr);
+    if (inputText !== "") this.translateText(inputText, lang, targetZtr);
     this.setLangHistory(lang);
   };
-  translateText = async (text, targetLang) => { log.info(logDir, "translateText()", text, targetLang);
+  translateText = async (text, targetLang, targetZtr) => { log.info(logDir, "translateText()", text, targetLang, targetZtr);
     const result = await translate(text, "auto", targetLang);
     var ztrText = "";
     if (result.resultText !== "") {
@@ -93,18 +93,21 @@ export default class PopupPage extends Component {
     return result;
   };
   handleZtrChange = ztr => { log.info(logDir, "handleZtrChange()", ztr);
-    this.transliterateText(ztr);
+    this.setState({ targetZtr: ztr });
+    console.log("in popuppage.js:handleZtrChange: ztr is : " + ztr);
+
+    // this.transliterateText(ztr);
   };  
-  transliterateText = (ztr) => { log.info(logDir, "transliterateText()", sourceText, ztr);
-    if (this.state.resultText !== "") {
-      var t = new transliterator();
-      const ztrText = t.transliterate_indik_abc(this.state.resultText, zabc_list_dict);// + "\n" + this.state.resultText ;      
-      this.setState({ langZtr: ztr, ztrText: ztrText });
-      // alert("vvv");
-      // t.transliterate_elem_content(document.body);
-    }
-    return ztrText;
-  }
+  // transliterateText = (ztr) => { log.info(logDir, "transliterateText()", sourceText, ztr);
+  //   if (this.state.resultText !== "") {
+  //     var t = new transliterator();
+  //     const ztrText = t.transliterate_indik_abc(this.state.resultText, zabc_list_dict);// + "\n" + this.state.resultText ;      
+  //     this.setState({ langZtr: ztr, ztrText: ztrText });
+  //     // alert("vvv");
+  //     // t.transliterate_elem_content(document.body);
+  //   }
+  //   return ztrText;
+  // }
   switchSecondLang = result => {
     if (!getSettings("ifChangeSecondLang")) return;
     const defaultTargetLang = getSettings("targetLang"); const secondLang = getSettings("secondTargetLang");
@@ -138,11 +141,11 @@ export default class PopupPage extends Component {
         />
         <InputArea inputText={this.state.inputText} handleInputText={this.handleInputText} sourceLang={this.state.sourceLang} />
         <hr/>
-        <ResultArea inputText={this.state.inputText} targetLang={this.state.targetLang} langZtr={this.state.langZtr}
+        <ResultArea inputText={this.state.inputText} targetLang={this.state.targetLang} targetZtr={this.state.targetZtr}
           ztrText={this.state.ztrText} candidateText={this.state.candidateText}
           statusText={this.state.statusText}
         />
-        <Footer tabUrl={this.state.tabUrl} targetLang={this.state.targetLang} langZtr={this.state.langZtr}
+        <Footer tabUrl={this.state.tabUrl} targetLang={this.state.targetLang} targetZtr={this.state.targetZtr}
           langHistory={this.state.langHistory} handleLangChange={this.handleLangChange}
           handleZtrChange={this.handleZtrChange}/>
       </div>

@@ -21,16 +21,6 @@ export default props => {
   const { resultText } = props;
   var t = new transliterator();
   const ztrText = t.transliterate_indik_abc(resultText, zabc_list_dict);
-  // const isError = statusText !== "OK";
-  // const shouldShowCandidate = getSettings("ifShowCandidate");
-
-  // const handleLinkClick = () => {
-  //   const { inputText, targetLang } = props;
-  //   const encodedText = encodeURIComponent(inputText);
-  //   const translateUrl = `https://translate.google.com/?sl=auto&tl=${targetLang}&text=${encodedText}`;
-  //   openUrl(translateUrl);
-  // };
-
   return (
     <div id="ztrArea">
       <p>{splitLine(ztrText)}</p>
