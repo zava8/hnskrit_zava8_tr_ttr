@@ -52,9 +52,17 @@ export default class Footer extends Component {
         </div>
         <div className="selectWrap">
           <select id="id_tr_select" value={targetZtr} onChange={this.handleChange2} title={browser.i18n.getMessage("targetZtrLabel")} >
-            <optgroup label="hski8"> <option value="abc8">abc8</option> <option value="abc8_u8z">abc8_u8z</option> </optgroup>
-            <optgroup label="aski5"> <option value="abc5">abc5</option> <option value="abc5small">abc5</option></optgroup>
-            <optgroup label="unikod5"> <option value="unikod5">unikod5</option> </optgroup>
+            <optgroup label="hski8">
+              <option id="abc8" value="abc8">abc8</option>
+              <option id="abc8_u8z" value="abc8_u8z">abc8_u8z</option>
+            </optgroup>
+            <optgroup label="aski5">
+              <option id="abc5" value="abc5">abc5</option>
+              <option id="abc5small" value="abc5small">abc5small</option>
+            </optgroup>
+            <optgroup label="unikod5">
+              <option id="unikod5" value="unikod5" disabled>unikod5</option>
+            </optgroup>
           </select>
         </div>
         <div className="translateLink">
