@@ -5,10 +5,10 @@ import { initSettings, getSettings, handleSettingsChange } from "src/settings/se
 import { updateLogLevel, overWriteLogLevel } from "src/common/log";
 import TranslateContainer from "./components/TranslateContainer";
 /////////
-// import browser from 'webextension-polyfill';
-import transliterator from './transliterator.js'
+import transliterator from 'src/common/transliterator.js'
+
 // import Tooltip from './tooltip.js';
-import unicodehindi_to_ascii_dict from './unicodehindi_to_ascii_dict.js';
+import unicodehindi_to_ascii_dict from 'src/common/unicodehindi_to_ascii_dict.js';
 // import '../styles/contentStyle.scss';
 /////////
 const init = async () => {
@@ -104,9 +104,9 @@ const handleMessage = async request => {
   const empty = new Promise(resolve => { setTimeout(() => { return resolve(""); }, 100); });  
   console.log("in index.js:handleMessage : request.message is " + request.message);
   switch (request.message) {
-      case "abc5":
-        console.log("in index.js:handleMessage: case abc5 calling transliterate_webpage(abc5)");
-        transliterate_webpage("abc5");
+      case "unicode5_to_abc5":
+        console.log("in index.js:handleMessage: case unicode5_to_abc5 calling transliterate_webpage(unicode5_to_abc5)");
+        transliterate_webpage("unicode5_to_abc5");
         break;
       case "getTabUrl": if (!isEnabled) return empty; if (window == window.parent) return location.href; else return empty;
       case "getSelectedText":
@@ -166,13 +166,10 @@ const showTranslateContainer = ( selectedText, selectedPosition, clickedPosition
 
 function transliterate_input(input,tr_selected_val) {
   switch(tr_selected_val) {
-    case "abc5" : 
-      console.log(" in index.js: transliterate_input case abc5: calling t.transliterate_unicodehindi_to_ascii");
+    case "unicode5_to_abc5" : 
+      console.log(" in index.js: transliterate_input case unicode5_to_abc5: calling t.transliterate_unicodehindi_to_ascii");
       return t.transliterate_unicodehindi_to_ascii(input, unicodehindi_to_ascii_dict);
   }
-  // if (0 < tr_selected_indeks && 0xC > tr_selected_indeks)
-  //   { return t.transliterate_unicodehindi_to_ascii(input, unicodehindi_to_ascii_dict); }
-  // if (0 === tr_selected_indeks) { return t.transliterate_ascii_to_asciismall(input); }
 }
 function transliterate_elem_content(elem, tr_selected_val) {
   var nods_dikt_list = [], text = "", nekst_node,
@@ -204,30 +201,12 @@ function transliterate_elem_content(elem, tr_selected_val) {
     nekst_ztred_span.textContent = transliterate_input(nekst_ztred_span.textContent,tr_selected_val);
   }
 }
-// function untransliterate_webpage() {
-//   Tooltip.destroy();
-//   if (observer) observer.disconnect();
-//   var ztred_span_list = document.getElementsByClassName('ztred');
-//   var nekst_ztred_span;
-//   for (let i = 0;i < ztred_span_list.length;i++) {
-//     nekst_ztred_span = ztred_span_list[i];
-//     var span_oldtekst = nekst_ztred_span.dataset.oldtekst ;
-//     if (!span_oldtekst.startsWith("\n")) { nekst_ztred_span.innerText = span_oldtekst; }   
-//   }
-//   transliterated_webpage = false;
-// }
-/** * Thanks Michael Zaporozhets * https://stackoverflow.com/a/11381730 */
 function detectMob() {
   const toMatch = [ /Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i ];
   return toMatch.some((toMatchItem) => { return navigator.userAgent.match(toMatchItem); });
 }
 function transliterate_webpage(tr_selected_val) {
-  console.log("in index.js transliterate_webpage called vith tr_selected_val :  " + tr_selected_val );
   t = new transliterator();
   transliterate_elem_content(document.body, tr_selected_val);
-  // if (overlay && !detectMob()) {
-  //   let onMouseOver = async (e) => { Tooltip.init('oriznl_yunikod'); document.removeEventListener('mouseover', onMouseOver); }
-  //   document.addEventListener('mouseover', onMouseOver);
-  // }
   transliterated_webpage = true;
 }

@@ -3,8 +3,8 @@ import browser from "webextension-polyfill";
 import generateLangOptions from "src/common/generateLangOptions";
 import openUrl from "src/common/openUrl";
 import "../styles/Footer.scss";
-import transliterator from "src/common/transliterator"
-import zabc_list_dict from "src/common/zabc"
+// import transliterator from "src/common/transliterator"
+// import zabc_list_dict from "src/common/zabc"
 
 export default class Footer extends Component {
   constructor(props) { super(props); this.langList = generateLangOptions(); }
@@ -16,24 +16,18 @@ export default class Footer extends Component {
   };
   handleZtrButtonClick = async () => {
     const { tabUrl, targetZtr} = this.props;
-    console.log("in footer.js:handleZtrButtonClick: targetZtr is : " + targetZtr);
     let tab = await browser.tabs.query({ active: true });
     tab = tab[0];
     console.log("in footer.js:handleZtrButtonClick: tab.id is : " + tab.id);
     console.log("sending message to tab.id(" + tab.id + ") { message: targetZtr } vhere targetZtr is : " + targetZtr);
     browser.tabs.sendMessage( tab.id, { message: targetZtr } ).catch(error => { console.log(error); });
-    // var t = new transliterator();
-    // t.transliterate_elem_content(document.body);
-    // const tab = (await browser.tabs.query({ currentWindow: true, active: true }))[0];
-    // browser.tabs.sendMessage( tab.id, { tr_selected_indeks: tr_selected_indeks } ).catch(error => { console.log(error); });
-
   };
   handleChange = e => { const lang = e.target.value; this.props.handleLangChange(lang); };
   handleChange2 = e => { const ztr = e.target.value; this.props.handleZtrChange(ztr); };
+  handleChange3 = e => { const phont = e.target.value; this.props.handlePhontChange(phont); };
 
   render() {
-    const { tabUrl, targetLang, targetZtr, langHistory } = this.props;
-
+    const { tabUrl, targetLang, targetZtr, targetPhont, langHistory } = this.props;
     return (
       <div id="footer">
         <div className="selectWrap">
@@ -52,24 +46,50 @@ export default class Footer extends Component {
         </div>
         <div className="selectWrap">
           <select id="id_tr_select" value={targetZtr} onChange={this.handleChange2} title={browser.i18n.getMessage("targetZtrLabel")} >
-            <optgroup label="hski8">
-              <option id="abc8" value="abc8">abc8</option>
-              <option id="abc8_u8z" value="abc8_u8z">abc8_u8z</option>
+            <option value="sel">select ztr</option>
+            <optgroup label="ascii5">
+              <option id="unicode5_to_abc5" value="unicode5_to_abc5">unicode5_to_abc5</option>
+              <option id="abc5small_to_abc5" value="abc5small_to_abc5">abc5small_to_abc5</option>
+              <option id="abc8_to_abc5" value="abc8_to_abc5">abc8_to_abc5</option>
             </optgroup>
-            <optgroup label="aski5">
-              <option id="abc5" value="abc5">abc5</option>
-              <option id="abc5small" value="abc5small">abc5small</option>
+            <optgroup label="ascii5small">
+              <option id="unicode5_to_abc5small" value="unicode5_to_abc5small">unicode5_to_abc5small</option>
+              <option id="abc5_to_abc5small" value="abc5_to_abc5small">abc5_to_abc5small</option>
+              <option id="abc8_to_abc5small" value="abc8_to_abc5small">abc8_to_abc5small</option>
             </optgroup>
-            <optgroup label="unikod5">
-              <option id="unikod5" value="unikod5" disabled>unikod5</option>
-            </optgroup>
+            <optgroup label="hskii8">
+              <option id="unicode5_to_abc8" value="unicode5_to_abc8">unicode5_to_abc8</option>
+              <option id="abc5_to_abc8" value="abc5_to_abc8">abc5_to_abc8</option>
+              <option id="abc5small_to_abc8" value="abc5small_to_abc8">abc5small_to_abc8</option>
+            </optgroup>            
           </select>
         </div>
         <div className="translateLink">
           {/* {tabUrl && <a onClick={this.handleZtrButtonClick}>{browser.i18n.getMessage("showLink")}</a>} */}
           <button type="button" id="transliterate" onClick={this.handleZtrButtonClick}>tr</button>
           <button type="button" id="untransliterate">utr</button>
-        </div>             
+        </div>
+        <div className="selectWrap">
+          <select id="id_phont_select" value={targetPhont} onChange={this.handleChange3} title="select phont cenz">
+            <option value="sel">select phont cenz</option>
+            <option value="sel">no phont cenz</option>
+            <optgroup label="ascii 5 phonts">
+              <option id="phont_unicode5_to_abc5" value="phont_unicode5_to_abc5">unicode5_to_abc5</option>
+              <option id="phont_abc5small_to_abc5" value="phont_abc5small_to_abc5">abc5small_to_abc5</option>
+              <option id="phont_abc8_to_abc5" value="phont_abc8_to_abc5">abc8_to_abc5</option>
+            </optgroup>
+            <optgroup label="ascii5small phonts">
+              <option id="phont_unicode5_to_abc5small" value="phont_unicode5_to_abc5small">unicode5_to_abc5small</option>
+              <option id="phont_abc5_to_abc5small" value="phont_abc5_to_abc5small">abc5_to_abc5small</option>
+              <option id="phont_abc8_to_abc5small" value="phont_abc8_to_abc5small">abc8_to_abc5small</option>
+            </optgroup>
+            <optgroup label="hskii8 phonts">
+              <option id="phont_unicode5_to_abc8" value="phont_unicode5_to_abc8">unicode5_to_abc8</option>
+              <option id="phont_abc5_to_abc8" value="phont_abc5_to_abc8">abc5_to_abc8</option>
+              <option id="phont_abc5small_to_abc8" value="phont_abc5small_to_abc8">abc5small_to_abc8</option>
+            </optgroup>            
+          </select>
+        </div>                    
       </div>
     );
   }

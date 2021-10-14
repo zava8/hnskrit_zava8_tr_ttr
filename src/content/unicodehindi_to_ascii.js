@@ -45,13 +45,13 @@ var unicodehindi_to_ascii = function (input, unicodehindi_to_ascii_dict) {
           prev_lang_code>0x11 && prev_lang_code<0x1B &&
           is_in_it(unicodehindi_to_ascii_dict.hard_consonants_modulo_list,prev_char_modulo)
         ) { output += 'H'; }
-        else { output += 'h'; }
+        else { output += 'H'; }
       }
       ///// 'N', // 	ं	902	2306	anuswara	anusvara bindu
       else if(2 == curr_char_modulo){ // 'मां: ऐस्पिरेंट्स में गुरी' : 'ma: espireNts mein guri', //  ं	902 anuswara	anusvara bindu
         if( nekst_lang_code>0x11 && nekst_lang_code<0x1B && 2 < nekst_char_modulo )
         {
-          output += 'm';
+          output += 'n';
         }
         // else
         // {

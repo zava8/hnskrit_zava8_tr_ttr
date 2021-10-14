@@ -1,4 +1,4 @@
-var indik2abc = function (input, zabc_dikt) {
+var unicodehindi_to_ascii = function (input, unicodehindi_to_ascii_dict) {
   function is_in_it (list, val) {
     if (!Array.isArray(list)) { list = Object.keys(list); }
     return list.indexOf(val) !== -1;
@@ -43,23 +43,27 @@ var indik2abc = function (input, zabc_dikt) {
       if( 0x39 === curr_char_modulo ) {
         if(
           prev_lang_code>0x11 && prev_lang_code<0x1B &&
-          is_in_it(zabc_dikt.hard_consonants_modulo_list,prev_char_modulo)
+          is_in_it(unicodehindi_to_ascii_dict.hard_consonants_modulo_list,prev_char_modulo)
         ) { output += 'H'; }
-        else { output += 'h'; }
+        else { output += 'H'; }
       }
       ///// 'N', // 	ं	902	2306	anuswara	anusvara bindu
       else if(2 == curr_char_modulo){ // 'मां: ऐस्पिरेंट्स में गुरी' : 'ma: espireNts mein guri', //  ं	902 anuswara	anusvara bindu
         if( nekst_lang_code>0x11 && nekst_lang_code<0x1B && 2 < nekst_char_modulo )
         {
-          output += 'N';
+          output += 'n';
         }
+        // else
+        // {
+        //   output += 'Am';
+        // }
       }
-      else if (is_in_it([7,8,9,0xA,0xD,0xE,0xF,0x10,0x13,0x14],curr_char_modulo)) { //'kAi'
+      else   if (is_in_it([7,8,9,0xA,0xD,0xE,0xF,0x10,0x13,0x14],curr_char_modulo)) { //'kAi'
         if ( prev_lang_code>0 && prev_char_modulo > 0x14 && prev_char_modulo < 0x3A)
         {output += 'A';}
-        output += zabc_dikt.zabc_list[curr_char_modulo];
+        output += unicodehindi_to_ascii_dict.all_phoniks_list[curr_char_modulo];
       }
-      else { output += zabc_dikt.zabc_list[curr_char_modulo]; }
+      else { output += unicodehindi_to_ascii_dict.all_phoniks_list[curr_char_modulo]; }
       indeks++ ;
     } // end oph indik lang iph
     else {
@@ -69,4 +73,4 @@ var indik2abc = function (input, zabc_dikt) {
   }
   return output;
 }
-export default indik2abc
+export default unicodehindi_to_ascii

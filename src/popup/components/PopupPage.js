@@ -9,8 +9,10 @@ import InputArea from "./InputArea";
 import ResultArea from "./ResultArea";
 import Footer from "./Footer";
 import "../styles/PopupPage.scss";
-import transliterator from "src/common/transliterator"
-import zabc_list_dict from "src/common/zabc"
+// import transliterator from "src/common/transliterator"
+import transliterator from 'src/common/transliterator.js'
+import unicodehindi_to_ascii_dict from 'src/common/unicodehindi_to_ascii_dict.js';
+// import zabc_list_dict from "src/common/zabc"
 const logDir = "popup/PopupPage";
 const getTabInfo = async () => {
   try {
@@ -24,10 +26,19 @@ const getTabInfo = async () => {
     };
   } catch (e) { return { isConnected: false, url: "", selectedText: "", isEnabledOnPage: false }; }
 };
+function onLanguageDetected(lang) {
+  console.log(`Language is: ${lang}`);
+}
+
+function onDetectError(error) {
+  console.log(`Error: ${error}`);
+}
+
+
 export default class PopupPage extends Component {
   constructor(props) { super(props);
-    this.state = { targetLang: "", targetZtr: "", inputText: "", resultText: "", ztrText: "",  candidateText: "",
-      sourceLang: "", statusText: "OK", tabUrl: "", isConnected: true,
+    this.state = { targetLang: "", targetZtr: "", targetPhont: "", inputText: "", resultText: "", ztrText: "",  candidateText: "",
+      sourceLang: "", statusText: "OK", tabUrl: "", tab_id: "", tab_lang: "", isConnected: true,
       isEnabledOnPage: true,
       langHistory: []
     };
@@ -44,10 +55,15 @@ export default class PopupPage extends Component {
       langHistory = [targetLang, secondLang];
       setSettings("langHistory", langHistory);
     }
-    this.setState({ targetLang: targetLang, targetZtr: "", langHistory: langHistory });
+    this.setState({ targetLang: targetLang, targetZtr: "", targetPhont: "", langHistory: langHistory });
     const tabInfo = await getTabInfo();
-    this.setState({ isConnected: tabInfo.isConnected, inputText: tabInfo.selectedText, tabUrl: tabInfo.url,
+    this.setState({ isConnected: tabInfo.isConnected, inputText: tabInfo.selectedText,
+      tabUrl: tabInfo.url, tab_id: tabInfo.tab_id,
       isEnabledOnPage: tabInfo.isEnabledOnPage
+    });
+    browser.browserAction.onClicked.addListener(function() {
+      var detecting = browser.tabs.detectLanguage();
+      detecting.then(onLanguageDetected, onDetectError);
     });
     if (tabInfo.selectedText !== "") this.handleInputText(tabInfo.selectedText);
   };
@@ -78,15 +94,23 @@ export default class PopupPage extends Component {
     var ztrText = "";
     if (result.resultText !== "") {
       var t = new transliterator();
-      ztrText = t.transliterate_indik_abc(result.resultText, zabc_list_dict);// + "\n" + this.state.resultText ;      
+      // ztrText = t.transliterate_indik_abc(result.resultText, zabc_list_dict);     
+      ztrText = t.transliterate_unicodehindi_to_ascii(result.resultText, unicodehindi_to_ascii_dict); 
     }
     this.setState({
       resultText: result.resultText, ztrText: ztrText, candidateText: result.candidateText, statusText: result.statusText,
       sourceLang: result.sourceLanguage, 
     });
     return result;
+  };  
+  handleZtrChange = ztr => { 
+    this.setState({ targetZtr: ztr });
+    var detecting = browser.tabs.detectLanguage();
+    detecting.then(onLanguageDetected, onDetectError);
   };
-  handleZtrChange = ztr => { this.setState({ targetZtr: ztr }); };
+  handlePhontChange = phont => { 
+    this.setState({ targetPhont: phont });
+  };
   switchSecondLang = result => {
     if (!getSettings("ifChangeSecondLang")) return;
     const defaultTargetLang = getSettings("targetLang"); const secondLang = getSettings("secondTargetLang");

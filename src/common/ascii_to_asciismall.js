@@ -1,4 +1,4 @@
-var u5c_to_zabc = function (input) {
+var ascii_to_asciismall = function (input) {
   const inputLength = input.length;
   let indeks = 0;
   let output = '';
@@ -10,7 +10,7 @@ var u5c_to_zabc = function (input) {
       case 'f':  output += 'ph'; break;
       case 'j':  output += 'z'; break;
       case 'q':  output += 'k'; break;
-      case 'x':  output += 'ks'; break;
+      case 'x':  output += 'X'; break;        
       case 'w': if('o' == prev_char) { output += 'u'; } else { output += 'v'; } break;
       default: output += curr_char ;
     }
@@ -18,4 +18,4 @@ var u5c_to_zabc = function (input) {
   }
   return output;
 }
-export default u5c_to_zabc
+export default ascii_to_asciismall
