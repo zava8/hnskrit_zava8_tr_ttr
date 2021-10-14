@@ -1,6 +1,4 @@
 import log from "loglevel";
-import transliterator from "src/common/transliterator"
-import zabc_list_dict from "src/common/zabc"
 let translationHistory = [];
 const logDir = "common/translate";
 
@@ -47,7 +45,8 @@ const formatResult = result => {
   log.log(logDir, "formatResult()", resultData);
   return resultData;
 };
-export default async (sourceWord, sourceLang = "auto", targetLang) => { log.log(logDir, "translate()", sourceWord, targetLang);
+export default async (sourceWord, sourceLang = "auto", targetLang) => {
+  log.log(logDir, "translate()", sourceWord, targetLang);
   sourceWord = sourceWord.trim();
   if (sourceWord === "") return { resultText: "", candidateText: "", sourceLanguage: "en", percentage: 0, statusText: "OK" };
   const history = getHistory(sourceWord, sourceLang, targetLang);
