@@ -1,56 +1,49 @@
-import indik2abc from './indik2abc';
-import u5c_to_zabc from './u5c_to_zabc';
+import unicodehindi_to_ascii from './unicodehindi_to_ascii.js';
+import ascii_to_asciismall from './ascii_to_asciismall.js';
+import unicodehindi_to_ascii_dict from './unicodehindi_to_ascii_dict.js';
+function detectMob() {
+  const toMatch = [ /Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i ];
+  return toMatch.some((toMatchItem) => { return navigator.userAgent.match(toMatchItem); });
+}
 class transliterator {
-  transliterate_indik_abc (input,zabc_dikt) {
-    // if (typeof input === 'string' || input instanceof String) {
-    //   if(input !== "") { alert("transliterate_indik_abc: input is : " + input); }
-    // }    
-    return indik2abc(input,zabc_dikt);
+  transliterate_unicodehindi_to_ascii (input,unicodehindi_to_ascii_dict) { return unicodehindi_to_ascii(input,unicodehindi_to_ascii_dict); }
+  transliterate_ascii_to_asciismall (input) { return ascii_to_asciismall(input); }
+  transliterate_input(input,ztr_dir_string) {
+    switch(ztr_dir_string) {
+      case "unicode5_to_abc5" : 
+        console.log(" in index.js: transliterate_input case unicode5_to_abc5: calling t.transliterate_unicodehindi_to_ascii");
+        return this.transliterate_unicodehindi_to_ascii(input, unicodehindi_to_ascii_dict);
+    }
   }
-  transliterate_u5c_zabc (input) {
-    return u5c_to_zabc(input);
-  }
-  
-  transliterate(input) { 
-    // if (typeof input === 'string' || input instanceof String) {
-    //   if(input === "") { var a = 5;}
-    //   else { alert("transliterate: input is : " + input); }
-    // }    
-    return transliterate_indik_abc(input, zabc_dikt);
-  }
-  transliterate_elem_content(elem) {
-    var nodes = [], text = "", node,
-      nodeIterator = elem.ownerDocument.createNodeIterator( elem, NodeFilter.SHOW_TEXT,
-        {
-          acceptNode: function(node) { if (node.parentNode && node.parentNode.nodeName !== 'SCRIPT') { return NodeFilter.FILTER_ACCEPT; } }
+  transliterate_elem_content(elem, ztr_dir_string) {
+    var nods_dikt_list = [], text = "", nekst_node,
+      nodeIterator = elem.ownerDocument.createNodeIterator( elem, NodeFilter.SHOW_TEXT, {
+          acceptNode: function(node) {
+            if (node.parentNode && node.parentNode.nodeName !== 'SCRIPT') { return NodeFilter.FILTER_ACCEPT; }
+          }
         },
         false
       );
-    while (node = nodeIterator.nextNode()) { nodes.push({ textNode: node, start: text.length }); text += node.nodeValue }
-    if (!nodes.length) return;
-    // alert("transliterate_elem_content nodes.length is " + nodes.length);
-    var flag = true ;
-    for (var i = 0; i < nodes.length; ++i) {
-      node = nodes[i];
-      // if(i == 2) { alert("transliterate_elem_content " + node.textNode.textContent); }
-      // if(flag && node.textNode.textContent.nodeValue !== "")
-      //   { alert("transliterate_elem_content " + node.textNode.textContent.text); flag = false; }
-      var spanNode = document.createElement("span");
-      spanNode.className = "yunikes";
-      spanNode.dataset.oriznl_yunikod = node.textNode.textContent;
-      node.textNode.parentNode.replaceChild(spanNode, node.textNode);
-      spanNode.appendChild(node.textNode);
+    while (nekst_node = nodeIterator.nextNode()) {
+      nods_dikt_list.push({ tekstNode: nekst_node, start: text.length });
+      text += nekst_node.nodeValue;
     }
-    nodes = elem.getElementsByClassName('yunikes');
-    // alert("transliterate_elem_content" + nodes.length);
-    flag = true ;
-    for (var i = 0; i < nodes.length; ++i) { 
-      node = nodes[i]; 
-      // if(flag && node.textContent !== "") { alert("transliterate_elem_content 42 : " + node.textContent);  }
-      node.textContent = this.transliterate(node.textContent);
-      // if(flag && node.textContent !== "") { alert("transliterate_elem_content 44 : " + node.textContent); flag = false; }
+    if (!nods_dikt_list.length) return;
+    var nekst_nod_dikt;
+    for (var i = 0; i < nods_dikt_list.length; ++i) { nekst_nod_dikt = nods_dikt_list[i];
+      var spanNode = document.createElement("span");
+      spanNode.className = "ztred";
+      spanNode.dataset.oldtekst = nekst_nod_dikt.tekstNode.textContent;
+      nekst_nod_dikt.tekstNode.parentNode.replaceChild(spanNode, nekst_nod_dikt.tekstNode);
+      spanNode.appendChild(nekst_nod_dikt.tekstNode);
+    }
+    var ztred_span_list = elem.getElementsByClassName('ztred');
+    var nekst_ztred_span;
+    for (var i = 0; i < ztred_span_list.length; ++i)
+    {
+      nekst_ztred_span = ztred_span_list[i];
+      nekst_ztred_span.textContent = this.transliterate_input(nekst_ztred_span.textContent,ztr_dir_string);
     }
   }
 }
-
 export default transliterator

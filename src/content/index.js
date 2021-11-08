@@ -6,10 +6,11 @@ import { updateLogLevel, overWriteLogLevel } from "src/common/log";
 import TranslateContainer from "./components/TranslateContainer";
 /////////
 import transliterator from 'src/common/transliterator.js'
-
 // import Tooltip from './tooltip.js';
-import unicodehindi_to_ascii_dict from 'src/common/unicodehindi_to_ascii_dict.js';
+// import unicodehindi_to_ascii_dict from 'src/common/unicodehindi_to_ascii_dict.js';
 // import '../styles/contentStyle.scss';
+/////////
+// import './veb8fonts.css'
 /////////
 const init = async () => {
   await initSettings();
@@ -39,8 +40,8 @@ const handleMouseUp = async e => {
   if (inCodeElement && getSettings("isDisabledInCodeElement")) return;
 
   const isInThisElement =
-    document.querySelector("#simple-translate") &&
-    document.querySelector("#simple-translate").contains(e.target);
+    document.querySelector("#hnskrit") &&
+    document.querySelector("#hnskrit").contains(e.target);
   if (isInThisElement) return;
 
   removeTranslatecontainer();
@@ -146,67 +147,23 @@ const disableExtensionByUrlList = () => {
   if (isMatched) isEnabled = false;
 };
 
-const removeTranslatecontainer = async () => { const element = document.getElementById("simple-translate"); if (!element) return;
+const removeTranslatecontainer = async () => { const element = document.getElementById("hnskrit"); if (!element) return;
   ReactDOM.unmountComponentAtNode(element);
   element.parentNode.removeChild(element);
 };
 
 const showTranslateContainer = ( selectedText, selectedPosition, clickedPosition = null, shouldTranslate = false ) => {
-  const element = document.getElementById("simple-translate"); if (element) return; if (!isEnabled) return;
-  document.body.insertAdjacentHTML("beforeend", "<div id='simple-translate'></div>");
+  const element = document.getElementById("hnskrit"); if (element) return; if (!isEnabled) return;
+  document.body.insertAdjacentHTML("beforeend", "<div id='hnskrit'></div>");
   ReactDOM.render( <TranslateContainer
       removeContainer={removeTranslatecontainer} selectedText={selectedText}
       selectedPosition={selectedPosition} clickedPosition={clickedPosition}
       shouldTranslate={shouldTranslate}
-    />, document.getElementById("simple-translate") );
+    />, document.getElementById("hnskrit") );
 };
 
-//////////////
-
-
-function transliterate_input(input,tr_selected_val) {
-  switch(tr_selected_val) {
-    case "unicode5_to_abc5" : 
-      console.log(" in index.js: transliterate_input case unicode5_to_abc5: calling t.transliterate_unicodehindi_to_ascii");
-      return t.transliterate_unicodehindi_to_ascii(input, unicodehindi_to_ascii_dict);
-  }
-}
-function transliterate_elem_content(elem, tr_selected_val) {
-  var nods_dikt_list = [], text = "", nekst_node,
-    nodeIterator = elem.ownerDocument.createNodeIterator( elem, NodeFilter.SHOW_TEXT, {
-        acceptNode: function(node) {
-          if (node.parentNode && node.parentNode.nodeName !== 'SCRIPT') { return NodeFilter.FILTER_ACCEPT; }
-        }
-      },
-      false
-    );
-  while (nekst_node = nodeIterator.nextNode()) {
-    nods_dikt_list.push({ tekstNode: nekst_node, start: text.length });
-    text += nekst_node.nodeValue;
-  }
-  if (!nods_dikt_list.length) return;
-  var nekst_nod_dikt;
-  for (var i = 0; i < nods_dikt_list.length; ++i) { nekst_nod_dikt = nods_dikt_list[i];
-    var spanNode = document.createElement("span");
-    spanNode.className = "ztred";
-    spanNode.dataset.oldtekst = nekst_nod_dikt.tekstNode.textContent;
-    nekst_nod_dikt.tekstNode.parentNode.replaceChild(spanNode, nekst_nod_dikt.tekstNode);
-    spanNode.appendChild(nekst_nod_dikt.tekstNode);
-  }
-  var ztred_span_list = elem.getElementsByClassName('ztred');
-  var nekst_ztred_span;
-  for (var i = 0; i < ztred_span_list.length; ++i)
-  {
-    nekst_ztred_span = ztred_span_list[i];
-    nekst_ztred_span.textContent = transliterate_input(nekst_ztred_span.textContent,tr_selected_val);
-  }
-}
-function detectMob() {
-  const toMatch = [ /Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i ];
-  return toMatch.some((toMatchItem) => { return navigator.userAgent.match(toMatchItem); });
-}
-function transliterate_webpage(tr_selected_val) {
+function transliterate_webpage(ztr_dir_string) {
   t = new transliterator();
-  transliterate_elem_content(document.body, tr_selected_val);
+  t.transliterate_elem_content(document.body, ztr_dir_string);
   transliterated_webpage = true;
 }

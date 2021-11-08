@@ -3,8 +3,7 @@ import browser from "webextension-polyfill";
 import generateLangOptions from "src/common/generateLangOptions";
 import openUrl from "src/common/openUrl";
 import "../styles/Footer.scss";
-// import transliterator from "src/common/transliterator"
-// import zabc_list_dict from "src/common/zabc"
+
 
 export default class Footer extends Component {
   constructor(props) { super(props); this.langList = generateLangOptions(); }
@@ -89,7 +88,8 @@ export default class Footer extends Component {
               <option id="phont_abc5small_to_abc8" value="phont_abc5small_to_abc8">abc5small_to_abc8</option>
             </optgroup>            
           </select>
-        </div>                    
+        </div>
+        <br/>
       </div>
     );
   }

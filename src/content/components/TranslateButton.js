@@ -29,7 +29,7 @@ export default props => {
   return (
     <div
       style={buttonStyle}
-      className={`simple-translate-button ${shouldShow ? "isShow" : ""}`}
+      className={`hnskrit-button ${shouldShow ? "isShow" : ""}`}
       onClick={props.handleButtonClick}
     />
   );

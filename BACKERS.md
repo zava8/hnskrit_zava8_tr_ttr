@@ -1,8 +1,8 @@
-# BACKERS
+# hnskrit hinglish hindi zava zs zinglish
 
-Thank you to the awesome backers who supported Simple Translate!
+Thank you to the awesome backers who supported hnskrit!
 
-[<img src=https://c5.patreon.com/external/logo/become_a_patron_button.png alt="Became a patreon">](https://www.patreon.com/sienori)
+[<img src="src/assets/imz/phoniks_smal_larz.jpg" alt="Became a patreon">](https://www.patreon.com/sienori)
 [<img src="other/promotion/badges/paypal.png" alt="Check out with PayPal">](https://www.paypal.me/sienoriExt)
 
 ## Backers via Patreon

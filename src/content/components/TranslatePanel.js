@@ -30,10 +30,10 @@ export default class TranslatePanel extends Component { constructor(props) { sup
   };
 
   handleDragStart = e => {
-    if (e.target.className !== "simple-translate-move") return;
+    if (e.target.className !== "hnskrit-move") return;
     this.isDragging = true;
 
-    const rect = document.querySelector(".simple-translate-panel").getBoundingClientRect();
+    const rect = document.querySelector(".hnskrit-panel").getBoundingClientRect();
     this.dragOffsets = {
       x: e.clientX - rect.left,
       y: e.clientY - rect.top
@@ -44,7 +44,7 @@ export default class TranslatePanel extends Component { constructor(props) { sup
   handleDragOver = e => {
     if (!this.isDragging) return;
     e.preventDefault();
-    const panel = document.querySelector(".simple-translate-panel");
+    const panel = document.querySelector(".hnskrit-panel");
     panel.style.top = `${e.clientY - this.dragOffsets.y}px`;
     panel.style.left = `${e.clientX - this.dragOffsets.x}px`;
   };
@@ -54,7 +54,7 @@ export default class TranslatePanel extends Component { constructor(props) { sup
     e.preventDefault();
     this.isDragging = false;
 
-    const panel = document.querySelector(".simple-translate-panel");
+    const panel = document.querySelector(".hnskrit-panel");
     panel.style.top = `${e.clientY - this.dragOffsets.y}px`;
     panel.style.left = `${e.clientX - this.dragOffsets.x}px`;
   };
@@ -181,21 +181,21 @@ export default class TranslatePanel extends Component { constructor(props) { sup
 
     return (
       <div
-        className={`simple-translate-panel ${shouldShow ? "isShow" : ""}`}
+        className={`hnskrit-panel ${shouldShow ? "isShow" : ""}`}
         ref="panel"
         style={panelStyles}
       >
-        <div className="simple-translate-result-wrapper" ref="wrapper" style={wrapperStyles}>
-          <div className="simple-translate-move" draggable="true" ref="move"></div>
-          <div className="simple-translate-result-contents">
-            <p className="simple-translate-result" style={resultStyles} dir="auto">
+        <div className="hnskrit-result-wrapper" ref="wrapper" style={wrapperStyles}>
+          <div className="hnskrit-move" draggable="true" ref="move"></div>
+          <div className="hnskrit-result-contents">
+            <p className="hnskrit-result" style={resultStyles} dir="auto">
               {splitLine(resultText)}
             </p>
-            <p className="simple-translate-candidate" style={candidateStyles} dir="auto">
+            <p className="hnskrit-candidate" style={candidateStyles} dir="auto">
               {splitLine(candidateText)}
             </p>
             {isError && (
-              <p className="simple-translate-error" style={candidateStyles}>
+              <p className="hnskrit-error" style={candidateStyles}>
                 {getErrorMessage(statusText)}
                 <br />
                 <a

@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import browser from "webextension-polyfill";
 import PopupPage from "./components/PopupPage";
+import log from "loglevel";
+const logDir = "popup";
 function onLanguageDetected(lang) {
     console.log(`Language is: ${lang}`);
     switch(lang){
@@ -33,7 +35,6 @@ function onLanguageDetected(lang) {
             document.getElementById("abc5_to_abc8").disabled = false;
             document.getElementById("abc5small_to_abc8").disabled = false;
         break;
-
         default : 
             document.getElementById("unicode5_to_abc5").disabled = false;
             document.getElementById("abc5small_to_abc5").disabled = false;
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 var ztrelem = document.getElementById("id_tr_select");
 ztrelem.addEventListener('click', () => {
+
     var detecting = browser.tabs.detectLanguage();
     detecting.then(onLanguageDetected, onDetectError);
 });

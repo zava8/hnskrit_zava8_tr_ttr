@@ -9,10 +9,8 @@ import InputArea from "./InputArea";
 import ResultArea from "./ResultArea";
 import Footer from "./Footer";
 import "../styles/PopupPage.scss";
-// import transliterator from "src/common/transliterator"
 import transliterator from 'src/common/transliterator.js'
 import unicodehindi_to_ascii_dict from 'src/common/unicodehindi_to_ascii_dict.js';
-// import zabc_list_dict from "src/common/zabc"
 const logDir = "popup/PopupPage";
 const getTabInfo = async () => {
   try {
@@ -26,15 +24,8 @@ const getTabInfo = async () => {
     };
   } catch (e) { return { isConnected: false, url: "", selectedText: "", isEnabledOnPage: false }; }
 };
-function onLanguageDetected(lang) {
-  console.log(`Language is: ${lang}`);
-}
-
-function onDetectError(error) {
-  console.log(`Error: ${error}`);
-}
-
-
+function onLanguageDetected(lang) { console.log(`Language is: ${lang}`); }
+function onDetectError(error) { console.log(`Error: ${error}`); }
 export default class PopupPage extends Component {
   constructor(props) { super(props);
     this.state = { targetLang: "", targetZtr: "", targetPhont: "", inputText: "", resultText: "", ztrText: "",  candidateText: "",
@@ -66,6 +57,8 @@ export default class PopupPage extends Component {
       detecting.then(onLanguageDetected, onDetectError);
     });
     if (tabInfo.selectedText !== "") this.handleInputText(tabInfo.selectedText);
+    // var fullURL = browser.runtime.getURL("beasts/frog.html");
+    // console.log(fullURL);
   };
   handleInputText = inputText => { log.log(logDir, "handleInputText()", inputText);
     this.setState({ inputText: inputText });
@@ -94,7 +87,6 @@ export default class PopupPage extends Component {
     var ztrText = "";
     if (result.resultText !== "") {
       var t = new transliterator();
-      // ztrText = t.transliterate_indik_abc(result.resultText, zabc_list_dict);     
       ztrText = t.transliterate_unicodehindi_to_ascii(result.resultText, unicodehindi_to_ascii_dict); 
     }
     this.setState({
@@ -150,6 +142,8 @@ export default class PopupPage extends Component {
         <Footer tabUrl={this.state.tabUrl} targetLang={this.state.targetLang} targetZtr={this.state.targetZtr}
           langHistory={this.state.langHistory} handleLangChange={this.handleLangChange}
           handleZtrChange={this.handleZtrChange}/>
+          <br/>
+          <img src={browser.runtime.getURL("images/phoniks_smal_larz.jpg")}></img>
       </div>
     );
   }
