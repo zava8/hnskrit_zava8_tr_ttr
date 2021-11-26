@@ -48,18 +48,11 @@ export default class Footer extends Component {
             <option value="sel">select ztr</option>
             <optgroup label="ascii5">
               <option id="unicode5_to_abc5" value="unicode5_to_abc5">unicode5_to_abc5</option>
-              <option id="abc5small_to_abc5" value="abc5small_to_abc5">abc5small_to_abc5</option>
               <option id="abc8_to_abc5" value="abc8_to_abc5">abc8_to_abc5</option>
-            </optgroup>
-            <optgroup label="ascii5small">
-              <option id="unicode5_to_abc5small" value="unicode5_to_abc5small">unicode5_to_abc5small</option>
-              <option id="abc5_to_abc5small" value="abc5_to_abc5small">abc5_to_abc5small</option>
-              <option id="abc8_to_abc5small" value="abc8_to_abc5small">abc8_to_abc5small</option>
             </optgroup>
             <optgroup label="hskii8">
               <option id="unicode5_to_abc8" value="unicode5_to_abc8">unicode5_to_abc8</option>
               <option id="abc5_to_abc8" value="abc5_to_abc8">abc5_to_abc8</option>
-              <option id="abc5small_to_abc8" value="abc5small_to_abc8">abc5small_to_abc8</option>
             </optgroup>            
           </select>
         </div>
@@ -74,18 +67,11 @@ export default class Footer extends Component {
             <option value="sel">no phont cenz</option>
             <optgroup label="ascii 5 phonts">
               <option id="phont_unicode5_to_abc5" value="phont_unicode5_to_abc5">unicode5_to_abc5</option>
-              <option id="phont_abc5small_to_abc5" value="phont_abc5small_to_abc5">abc5small_to_abc5</option>
               <option id="phont_abc8_to_abc5" value="phont_abc8_to_abc5">abc8_to_abc5</option>
-            </optgroup>
-            <optgroup label="ascii5small phonts">
-              <option id="phont_unicode5_to_abc5small" value="phont_unicode5_to_abc5small">unicode5_to_abc5small</option>
-              <option id="phont_abc5_to_abc5small" value="phont_abc5_to_abc5small">abc5_to_abc5small</option>
-              <option id="phont_abc8_to_abc5small" value="phont_abc8_to_abc5small">abc8_to_abc5small</option>
             </optgroup>
             <optgroup label="hskii8 phonts">
               <option id="phont_unicode5_to_abc8" value="phont_unicode5_to_abc8">unicode5_to_abc8</option>
               <option id="phont_abc5_to_abc8" value="phont_abc5_to_abc8">abc5_to_abc8</option>
-              <option id="phont_abc5small_to_abc8" value="phont_abc5small_to_abc8">abc5small_to_abc8</option>
             </optgroup>            
           </select>
         </div>
