@@ -107,8 +107,12 @@ const handleMessage = async request => {
   console.log("in index.js:handleMessage : request.message is " + request.message);
   switch (request.message) {
       case "0": case "1": case "2": case "3":
-        console.log("in content/index.js:handleMessage: case unicode5_to_abc5 calling transliterate_webpage( " + request.message + " )");
+        console.log("in content/index.js:handleMessage: calling transliterate_webpage( " + request.message + " )");
         transliterate_webpage(request.message);
+        break;
+      case "utr":
+        console.log("in content/index.js:handleMessage: case utr calling utransliterate_webpage()");
+        utransliterate_webpage();
         break;
       case "getTabUrl": if (!isEnabled) return empty; if (window == window.parent) return location.href; else return empty;
       case "getSelectedText":
@@ -164,8 +168,12 @@ const showTranslateContainer = ( selectedText, selectedPosition, clickedPosition
 };
 
 function transliterate_webpage(ztr_dir_string) {
-  t = new transliterator();
-  // t.transliterate_elem_contenttt(document.body, ztr_dir_string);
+  if(!(t)) t = new transliterator();
   t.transliterate_dom_node(document.body, ztr_dir_string);
   transliterated_webpage = true;
+}
+function utransliterate_webpage() {
+  if(!(t)) t = new transliterator();
+  t.untransliterate_dom_node();
+  transliterated_webpage = false;
 }

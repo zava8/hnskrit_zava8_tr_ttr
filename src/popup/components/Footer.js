@@ -21,6 +21,14 @@ export default class Footer extends Component {
     console.log("sending message to tab.id(" + tab.id + ") { message: targetZtr } vhere targetZtr is : " + targetZtr);
     browser.tabs.sendMessage( tab.id, { message: targetZtr } ).catch(error => { console.log(error); });
   };
+  handle_utrButtonClick = async () => {
+    const { tabUrl, targetZtr} = this.props;
+    let tab = await browser.tabs.query({ active: true });
+    tab = tab[0];
+    console.log("in footer.js:handle_utrButtonClick: tab.id is : " + tab.id);
+    console.log("sending message to tab.id(" + tab.id + ") { message: utr }");
+    browser.tabs.sendMessage( tab.id, { message: "utr" } ).catch(error => { console.log(error); });
+  };
   handleChange = e => { const lang = e.target.value; this.props.handleLangChange(lang); };
   handleChange2 = e => { const ztr = e.target.value; this.props.handleZtrChange(ztr); };
   handleChange3 = e => { const phont = e.target.value; this.props.handlePhontChange(phont); };
@@ -59,7 +67,7 @@ export default class Footer extends Component {
         <div className="translateLink">
           {/* {tabUrl && <a onClick={this.handleZtrButtonClick}>{browser.i18n.getMessage("showLink")}</a>} */}
           <button type="button" id="transliterate" onClick={this.handleZtrButtonClick}>tr</button>
-          <button type="button" id="untransliterate">utr</button>
+          <button type="button" id="untransliterate" onClick={this.handle_utrButtonClick}>utr</button>
         </div>
         <div className="selectWrap">
           <select id="id_phont_select" value={targetPhont} onChange={this.handleChange3} title="select phont cenz">
