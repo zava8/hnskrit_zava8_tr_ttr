@@ -9,6 +9,7 @@ import InputArea from "./InputArea";
 import ResultArea from "./ResultArea";
 import Footer from "./Footer";
 import "../styles/PopupPage.scss";
+// import transliterator from 'kvz-transliteration';
 import transliterator from 'src/common/transliterator.js'
 import unicodehindi_to_ascii_dict from 'src/common/unicodehindi_to_ascii_dict.js';
 const logDir = "popup/PopupPage";

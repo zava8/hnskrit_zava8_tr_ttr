@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "dependencies": {
     "browser-info": "^1.2.0",
-    "libindik-transliteration": "^1.2.21",
+    "kvz-transliteration": "^1.0.5",
     "loglevel": "^1.6.1",
     "query-string": "^6.1.0",
     "react": "^16.13.1",
