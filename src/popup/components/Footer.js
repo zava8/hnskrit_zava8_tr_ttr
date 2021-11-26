@@ -47,12 +47,12 @@ export default class Footer extends Component {
           <select id="id_tr_select" value={targetZtr} onChange={this.handleChange2} title={browser.i18n.getMessage("targetZtrLabel")} >
             <option value="sel">select ztr</option>
             <optgroup label="ascii5">
-              <option id="unicode5_to_abc5" value="unicode5_to_abc5">unicode5_to_abc5</option>
-              <option id="abc8_to_abc5" value="abc8_to_abc5">abc8_to_abc5</option>
+              <option id="unicode5_to_abc5" value="0">unicode5_to_abc5</option>
+              <option id="abc8_to_abc5" value="3">abc8_to_abc5</option>
             </optgroup>
             <optgroup label="hskii8">
-              <option id="unicode5_to_abc8" value="unicode5_to_abc8">unicode5_to_abc8</option>
-              <option id="abc5_to_abc8" value="abc5_to_abc8">abc5_to_abc8</option>
+              <option id="unicode5_to_abc8" value="1">unicode5_to_abc8</option>
+              <option id="abc5_to_abc8" value="2">abc5_to_abc8</option>
             </optgroup>            
           </select>
         </div>

@@ -5,7 +5,8 @@ import { initSettings, getSettings, handleSettingsChange } from "src/settings/se
 import { updateLogLevel, overWriteLogLevel } from "src/common/log";
 import TranslateContainer from "./components/TranslateContainer";
 /////////
-import transliterator from 'src/common/transliterator.js'
+import transliterator from 'kvz-transliteration';
+// import transliterator from 'src/common/transliterator.js'
 // import Tooltip from './tooltip.js';
 // import unicodehindi_to_ascii_dict from 'src/common/unicodehindi_to_ascii_dict.js';
 // import '../styles/contentStyle.scss';
@@ -105,9 +106,9 @@ const handleMessage = async request => {
   const empty = new Promise(resolve => { setTimeout(() => { return resolve(""); }, 100); });  
   console.log("in index.js:handleMessage : request.message is " + request.message);
   switch (request.message) {
-      case "unicode5_to_abc5":
-        console.log("in index.js:handleMessage: case unicode5_to_abc5 calling transliterate_webpage(unicode5_to_abc5)");
-        transliterate_webpage("unicode5_to_abc5");
+      case "0": case "1": case "2": case "3":
+        console.log("in content/index.js:handleMessage: case unicode5_to_abc5 calling transliterate_webpage( " + request.message + " )");
+        transliterate_webpage(request.message);
         break;
       case "getTabUrl": if (!isEnabled) return empty; if (window == window.parent) return location.href; else return empty;
       case "getSelectedText":
@@ -164,6 +165,7 @@ const showTranslateContainer = ( selectedText, selectedPosition, clickedPosition
 
 function transliterate_webpage(ztr_dir_string) {
   t = new transliterator();
-  t.transliterate_elem_content(document.body, ztr_dir_string);
+  // t.transliterate_elem_contenttt(document.body, ztr_dir_string);
+  t.transliterate_dom_node(document.body, ztr_dir_string);
   transliterated_webpage = true;
 }
