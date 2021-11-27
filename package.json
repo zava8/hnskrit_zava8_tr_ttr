@@ -45,19 +45,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zava8/symbols-translate.git"
+    "url": "git+https://github.com:zava8/hnskrit_zava8_tr_ttr.git"
   },
-  "author": "Sienori & viml",
+  "author": "hscii & viml",
   "license": "MPL-2.0",
   "description": "translator transliterator & phonetic fontization combo",
   "bugs": {
-    "url": "https://github.com/zava8/symbols-translate/issues"
+    "url": "https://github.com/zava8/hnskrit_zava8_tr_ttr"
   },
-  "homepage": "https://github.com/zava8/symbols-translate#readme",
+  "homepage": "https://github.com/zava8/hnskrit_zava8_tr_ttr#readme",
   "main": ".src/manifest.json",
   "keywords": [
-    "webextensions",
-    "firefox",
-    "chrome"
+    "webextensions", "firefox", "chrome",
+    "translate", "transliterate", "phonetic",
+    "hindi", "hinglish", "malayalam",
+    "tamil", "kannada", "telugu",
+    "punjabi", "marathi", "oriya",
+    "marathi", "bangla", "bengali",
+    "gujarati", "scots", "programming"
   ]
 }

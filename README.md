@@ -1,4 +1,4 @@
-# <sub><img src="/src/icons/hnskrit_logo64.png" width=64px height=64px></sub> Simple Translate
+# <sub><img src="/src/icons/hnskrit_logo64.png" width=64px height=64px></sub> hscii translate
 
 #### Quickly translate selected text on web page. In toolbar popup, you can translate input text.
 
@@ -10,28 +10,28 @@
 
 ## Backers
 
-Thank you to the awesome **[backers](https://github.com/sienori/hnskrit/blob/master/BACKERS.md)** who supported Simple Translate!
+Thank you to the awesome **[backers](https://github.com/hscii/hnskrit/blob/master/BACKERS.md)** who supported hscii translate!
 
-[<img src="other/promotion/badges/patreon.png" alt="Became a Patreon" height="44px" align="left">](https://www.patreon.com/sienori)
+[<img src="other/promotion/badges/patreon.png" alt="Became a Patreon" height="44px" align="left">](https://www.patreon.com/hscii)
 [<img src="other/promotion/badges/paypal.png" alt="Check out with PayPal">](https://www.paypal.me/sienoriExt)
 
 ## Sponsors
 
-Support Simple Translate by [becoming a sponsor](https://www.patreon.com/join/sienori). Thank you to our wonderful sponsors!
+Support hscii translate by [becoming a sponsor](https://www.patreon.com/join/hscii). Thank you to our wonderful sponsors!
 
 [<img src="docs/img/toucan.png" alt="Toucan" height=110px align="left">](https://jointoucan.com/partners/tab-session-manager)
 
-[<img src="docs/img/becomeSponsor.png" alt="Become a Sponsor" height=110px>](https://www.patreon.com/join/sienori)
+[<img src="docs/img/becomeSponsor.png" alt="Become a Sponsor" height=110px>](https://www.patreon.com/join/hscii)
 
 ## Translation
 
-You can contribute by translating Simple Translate on **[Crowdin](https://crowdin.com/project/hnskrit)**.
+You can contribute by translating hscii translate on **[Crowdin](https://crowdin.com/project/hnskrit)**.
 
 ## Developing
 
 > Required Node 14+
 
-1. Clone the repository `git clone https://github.com/sienori/hnskrit`
+1. Clone the repository `git clone https://github.com/hscii/hnskrit`
 2. Run `npm install`
 3. Run `npm run watch-dev`
 
@@ -48,4 +48,4 @@ You can contribute by translating Simple Translate on **[Crowdin](https://crowdi
 
 ## Privacy Policy
 
-[Privacy Policy](https://hnskrit.sienori.com/privacy-policy) of Simple Translate
+[Privacy Policy](https://hnskrit.hscii.com/privacy-policy) of hscii translate

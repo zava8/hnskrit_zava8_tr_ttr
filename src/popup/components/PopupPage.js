@@ -10,8 +10,6 @@ import ResultArea from "./ResultArea";
 import Footer from "./Footer";
 import "../styles/PopupPage.scss";
 import transliterator from 'kvz-transliteration';
-// import transliterator from 'src/common/transliterator.js'
-// import unicodehindi_to_ascii_dict from 'src/common/unicodehindi_to_ascii_dict.js';
 const logDir = "popup/PopupPage";
 const getTabInfo = async () => {
   try {
@@ -88,7 +86,7 @@ export default class PopupPage extends Component {
     var ztrText = "";
     if (result.resultText !== "") {
       var t = new transliterator();
-      ztrText = t.transliterate_unicodehindi_to_ascii(result.resultText, unicodehindi_to_ascii_dict); 
+      ztrText = t.transliterate_input(result.resultText, "0"); 
     }
     this.setState({
       resultText: result.resultText, ztrText: ztrText, candidateText: result.candidateText, statusText: result.statusText,

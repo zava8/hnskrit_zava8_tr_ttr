@@ -10,7 +10,7 @@ const SideBar = props => (
   <div className="sideBar">
     <div className="titleContainer">
       <img src="/icons/hnskrit_logo64.png" className="logo" />
-      <span className="logoTitle">Simple Translate</span>
+      <span className="logoTitle">hscii translate</span>
     </div>
     <ul>
       <li

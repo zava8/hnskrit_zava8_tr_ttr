@@ -1,5 +1,5 @@
 /* Copyright (c) 2018 Kamil Mikosz
- * Copyright (c) 2019 Sienori
+ * Copyright (c) 2019 hscii
  * Released under the MIT license.
  * see https://opensource.org/licenses/MIT */
 

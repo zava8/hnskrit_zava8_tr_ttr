@@ -5,10 +5,7 @@ import { getSettings } from "src/settings/settings";
 import TranslateButton from "./TranslateButton";
 import TranslatePanel from "./TranslatePanel";
 import "../styles/TranslateContainer.scss";
-import transliterator from "src/common/transliterator"
-// import zabc_list_dict from "src/common/zabc"
-import unicodehindi_to_ascii_dict from 'src/common/unicodehindi_to_ascii_dict.js';
-
+import transliterator from 'kvz-transliteration';
 
 const translateText = async (text, targetLang = getSettings("targetLang")) => {
   const result = await translate(text, "auto", targetLang);
@@ -86,7 +83,7 @@ export default class TranslateContainer extends Component {
       result.sourceLanguage === targetLang && result.percentage > 0 && targetLang !== secondLang;
     if (shouldSwitchSecondLang) result = await translateText(this.selectedText, secondLang);
 
-    const ztrText = this.t.transliterate_indik_abc(result.resultText, unicodehindi_to_ascii_dict);
+    const ztrText = this.t.transliterate_input(result.resultText, "0");
     this.setState({
       shouldShowPanel: true,
       panelPosition: panelPosition,

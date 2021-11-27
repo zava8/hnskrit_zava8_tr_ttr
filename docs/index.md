@@ -1,39 +1,39 @@
-<img src="https://raw.githubusercontent.com/sienori/hnskrit/master/src/icons/64.png" align="left" height="64px" style="margin-right:10px">
+<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/src/icons/64.png" align="left" height="64px" style="margin-right:10px">
 
-# Simple Translate
+# hscii translate
 
 Quickly translate selected text on web page. In toolbar popup, you can translate input text.
 
 ## Download
 
-[<img src="https://raw.githubusercontent.com/sienori/hnskrit/master/other/promotion/badges/firefox.png" align="left" alt="for Firefox">](https://addons.mozilla.org/firefox/addon/hnskrit/)
+[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/firefox.png" align="left" alt="for Firefox">](https://addons.mozilla.org/firefox/addon/hnskrit/)
 &ensp;
-[<img src="https://raw.githubusercontent.com/sienori/hnskrit/master/other/promotion/badges/chrome.png" alt="for Chrome" height="60px">](https://chrome.google.com/webstore/detail/hnskrit/ibplnjkanclpjokhdolnendpplpjiace)
+[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/chrome.png" alt="for Chrome" height="60px">](https://chrome.google.com/webstore/detail/hnskrit/ibplnjkanclpjokhdolnendpplpjiace)
 
 [for Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/cllnohpbfenopiakdcjmjcbaeapmkcdl)
 
 ## Backers
 
-Thank you to the awesome **[backers](https://github.com/sienori/hnskrit/blob/master/BACKERS.md)** who supported Simple Translate!
+Thank you to the awesome **[backers](https://github.com/hscii/hnskrit/blob/master/BACKERS.md)** who supported hscii translate!
 
-[<img src="https://raw.githubusercontent.com/sienori/hnskrit/master/other/promotion/badges/patreon.png" alt="Became a Patreon" height="44px">](https://www.patreon.com/sienori)
-[<img src="https://raw.githubusercontent.com/sienori/hnskrit/master/other/promotion/badges/paypal.png" alt="Check out with PayPal">](https://www.paypal.me/sienoriExt)
+[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/patreon.png" alt="Became a Patreon" height="44px">](https://www.patreon.com/hscii)
+[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/paypal.png" alt="Check out with PayPal">](https://www.paypal.me/sienoriExt)
 
 ## Sponsors
 
-Support Tab Session Manager by [becoming a sponsor](https://www.patreon.com/join/sienori). Thank you to our wonderful sponsors!
+Support Tab Session Manager by [becoming a sponsor](https://www.patreon.com/join/hscii). Thank you to our wonderful sponsors!
 
-[<img src="https://raw.githubusercontent.com/sienori/hnskrit/master/docs/img/toucan.png" alt="Toucan" height=110px>](https://jointoucan.com/partners/tab-session-manager)
+[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/docs/img/toucan.png" alt="Toucan" height=110px>](https://jointoucan.com/partners/tab-session-manager)
 &ensp;
-[<img src="https://raw.githubusercontent.com/sienori/hnskrit/master/docs/img/becomeSponsor.png" alt="Become a Sponsor" height=110px>](https://www.patreon.com/join/sienori)
+[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/docs/img/becomeSponsor.png" alt="Become a Sponsor" height=110px>](https://www.patreon.com/join/hscii)
 
 ## Translation
 
-You can contribute by translating Simple Translate on **[Crowdin](https://crowdin.com/project/hnskrit)**.
+You can contribute by translating hscii translate on **[Crowdin](https://crowdin.com/project/hnskrit)**.
 
 ## Developing
 
-1. Clone the repository `git clone https://github.com/sienori/hnskrit`
+1. Clone the repository `git clone https://github.com/hscii/hnskrit`
 2. Run `npm install`
 3. Run `npm run watch-dev`
 
@@ -50,4 +50,4 @@ You can contribute by translating Simple Translate on **[Crowdin](https://crowdi
 
 ## Privacy Policy
 
-[Privacy Policy](https://hnskrit.sienori.com/privacy-policy) of Simple Translate
+[Privacy Policy](https://hnskrit.hscii.com/privacy-policy) of hscii translate

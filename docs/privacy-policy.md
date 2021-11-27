@@ -2,19 +2,19 @@
 title: Privacy Poricy
 ---
 
-# Privacy Poricy of Simple Translate
+# Privacy Poricy of hscii translate
 
 **Effective Date: May 9, 2020**
 
 ## 1. Introduction
 
-This page describes the Privacy Policy that applies to all information collected or submitted when you install or use Simple Translate.
+This page describes the Privacy Policy that applies to all information collected or submitted when you install or use hscii translate.
 
-Simple Translate is owned and operated by [Sienori](https://github.com/sienori) - a developer from Japan (referred to herein as "we", "us", or "our"). We take the protection of your personal data very seriously and will always offer you the Simple Translate and its functionality with your privacy in mind.
+hscii translate is owned and operated by [hscii](https://github.com/hscii) - a developer from Japan (referred to herein as "we", "us", or "our"). We take the protection of your personal data very seriously and will always offer you the hscii translate and its functionality with your privacy in mind.
 
-## 2. Handling user data with Simple Translate
+## 2. Handling user data with hscii translate
 
-To provide translation and pronunciation functions, Simple Translate retrieves the input/selected text and page URLs and sends the request to Google's API.
+To provide translation and pronunciation functions, hscii translate retrieves the input/selected text and page URLs and sends the request to Google's API.
 **We do not access/collect any of these data.**
 
 Please refer to the following link for Google’s privacy policy.  
@@ -22,15 +22,15 @@ Please refer to the following link for Google’s privacy policy.
 
 ## 3. External service
 
-Simple Translate uses external services in following cases:
+hscii translate uses external services in following cases:
 
 #### Accessing external sites
 
-Simple Translate includes links to external sites. When accessing external sites, the privacy policy of each site is applied.
+hscii translate includes links to external sites. When accessing external sites, the privacy policy of each site is applied.
 
 #### Installing and using in the browser
 
-Simple Translate is hosted on each browser's platform.
+hscii translate is hosted on each browser's platform.
 Please refer to the following links for information on how to handle data when installing and using the extension.
 
 [Firefox Privacy Policy](https://www.mozilla.org/en-US/privacy/firefox/)  
@@ -41,7 +41,7 @@ Please refer to the following links for information on how to handle data when i
 
 If you have questions about this Privacy Policy, please contact us at the address below:
 
-Email: sienori.firefox+stpp@gmail.com
+Email: hscii.firefox+stpp@gmail.com
 
 ## 5. Changes to Privacy Policy
 
