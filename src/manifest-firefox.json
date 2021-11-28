@@ -19,11 +19,11 @@
     "open_in_tab": true
   },
   "icons": {
-    "512": "icons/hnskrit_logo512.png",
-    "128": "icons/hnskrit_logo128.png",
-    "64": "icons/hnskrit_logo64.png",
-    "48": "icons/hnskrit_logo48.png",
-    "32": "icons/hnskrit_logo32.png"
+    "512": "assets/icons/hnskrit_logo512.png",
+    "128": "assets/icons/hnskrit_logo128.png",
+    "64": "assets/icons/hnskrit_logo64.png",
+    "48": "assets/icons/hnskrit_logo48.png",
+    "32": "assets/icons/hnskrit_logo32.png"
   },
   "background": {
     "scripts": [
@@ -32,14 +32,14 @@
   },
   "browser_action": {
     "default_icon": {
-      "512": "icons/hnskrit_logo512.png",
-      "128": "icons/hnskrit_logo128.png",
-      "64": "icons/hnskrit_logo64.png",
-      "48": "icons/hnskrit_logo48.png",
-      "38": "icons/hnskrit_logo38.png",
-      "32": "icons/hnskrit_logo32.png",
-      "19": "icons/hnskrit_logo19.png",
-      "16": "icons/hnskrit_logo16.png"
+      "512": "assets/icons/hnskrit_logo512.png",
+      "128": "assets/icons/hnskrit_logo128.png",
+      "64": "assets/icons/hnskrit_logo64.png",
+      "48": "assets/icons/hnskrit_logo48.png",
+      "38": "assets/icons/hnskrit_logo38.png",
+      "32": "assets/icons/hnskrit_logo32.png",
+      "19": "assets/icons/hnskrit_logo19.png",
+      "16": "assets/icons/hnskrit_logo16.png"
     },
     "default_popup": "popup/index.html"
   },
@@ -53,7 +53,7 @@
     }
   ],
   "web_accessible_resources": [
-    "icons/hnskrit_logo512.png", "images/phoniks_smal_larz.jpg"
+    "assets/icons/hnskrit_logo512.png", "assets/images/phoniks_smal_larz.jpg"
   ],
   "commands": {
     "_execute_browser_action": {

@@ -1,4 +1,4 @@
-# <sub><img src="/src/icons/hnskrit_logo64.png" width=64px height=64px></sub> hscii translate
+# <sub><img src="/src/assets/icons/hnskrit_logo64.png" width=64px height=64px></sub> hscii translate
 
 #### Quickly translate selected text on web page. In toolbar popup, you can translate input text.
 

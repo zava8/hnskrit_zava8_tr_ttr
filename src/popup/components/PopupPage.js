@@ -142,7 +142,7 @@ export default class PopupPage extends Component {
           langHistory={this.state.langHistory} handleLangChange={this.handleLangChange}
           handleZtrChange={this.handleZtrChange}/>
           <br/>
-          <img src={browser.runtime.getURL("images/phoniks_smal_larz.jpg")}></img>
+          <img src={browser.runtime.getURL("assets/images/phoniks_smal_larz.jpg")}></img>
       </div>
     );
   }

@@ -44,8 +44,16 @@ const getCopyPlugins = (browserDir, outputDir = "dev", sourceDir = "src") => [
   new CopyWebpackPlugin({
     patterns: [
       {
-        from: `${sourceDir}/icons`,
-        to: path.resolve(__dirname, `${outputDir}/${browserDir}/icons`)
+        from: `${sourceDir}/assets/icons`,
+        to: path.resolve(__dirname, `${outputDir}/${browserDir}/assets/icons`)
+      },
+      {
+        from: `${sourceDir}/assets/images`,
+        to: path.resolve(__dirname, `${outputDir}/${browserDir}/assets/images`)
+      },
+      {
+        from: `${sourceDir}/assets/fonts`,
+        to: path.resolve(__dirname, `${outputDir}/${browserDir}/assets/fonts`)
       },
       {
         from: `${sourceDir}/_locales`,
@@ -63,8 +71,16 @@ const getFirefoxCopyPlugins = (browserDir, outputDir = "dev", sourceDir = "src")
   new CopyWebpackPlugin({
     patterns: [
       {
-        from: `${sourceDir}/icons`,
-        to: path.resolve(__dirname, `${outputDir}/${browserDir}/icons`)
+        from: `${sourceDir}/assets/icons`,
+        to: path.resolve(__dirname, `${outputDir}/${browserDir}/assets/icons`)
+      },
+      {
+        from: `${sourceDir}/assets/images`,
+        to: path.resolve(__dirname, `${outputDir}/${browserDir}/assets/images`)
+      },
+      {
+        from: `${sourceDir}/assets/fonts`,
+        to: path.resolve(__dirname, `${outputDir}/${browserDir}/assets/fonts`)
       },
       {
         from: `${sourceDir}/_locales`,

@@ -60,12 +60,7 @@ const generalConfig = {
           "babel-loader",
           {
             loader: "react-svg-loader",
-            options: {
-              svgo: {
-                plugins: [{ removeTitle: false }],
-                floatPrecision: 2
-              }
-            }
+            options: { svgo: { plugins: [{ removeTitle: false }], floatPrecision: 2 } }
           }
         ]
       }
@@ -78,9 +73,7 @@ module.exports = [
     ...generalConfig,
     output: getOutput("chrome", config.tempDirectory),
     entry: getEntry(config.chromePath),
-    optimization: {
-      minimize: true
-    },
+    optimization: { minimize: true },
     plugins: [
       new CleanWebpackPlugin(["dist", "temp"]),
       ...getMiniCssExtractPlugin(),
@@ -93,9 +86,7 @@ module.exports = [
     ...generalConfig,
     entry: getEntry(config.firefoxPath),
     output: getOutput("firefox", config.tempDirectory),
-    optimization: {
-      minimize: true
-    },
+    optimization: { minimize: true },
     plugins: [
       new CleanWebpackPlugin(["dist", "temp"]),
       ...getMiniCssExtractPlugin(),
@@ -106,11 +97,7 @@ module.exports = [
   },
   {
     mode: "production",
-    resolve: {
-      alias: {
-        src: path.resolve(__dirname, "src/")
-      }
-    },
+    resolve: { alias: { src: path.resolve(__dirname, "src/") } },
     entry: { other: path.resolve(__dirname, `src/background/background.js`) },
     output: getOutput("copiedSource", config.tempDirectory),
     plugins: [

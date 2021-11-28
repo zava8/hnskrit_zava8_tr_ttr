@@ -67,11 +67,11 @@ export default props => {
         extraCaption={
           <div>
             <a href={patreonLink} target="_blank">
-              <img src="/icons/patreonButton.png" alt="Patreon"
+              <img src="src/assets/icons/patreonButton.png" alt="Patreon"
                 style={{ height: 44, marginRight: 20 }} />
             </a>
             <a href={paypalLink} target="_blank">
-              <img src="/icons/paypalButton.png" alt="Paypal" />
+              <img src="src/assets/icons/paypalButton.png" alt="Paypal" />
             </a>
           </div>
         }
