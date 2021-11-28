@@ -15,7 +15,7 @@ const getToggleButtonTitle = isEnabled => {
 };
 export default props => (
   <div id="header">
-    <div className="title">hscii translate</div>
+    <div className="title">hnskrit</div>
     <div className="rightButtons">
       <div className="toggleButton" title={getToggleButtonTitle(props.isEnabledOnPage)}>
         <Toggle checked={props.isEnabledOnPage} onChange={props.toggleEnabledOnPage} icons={false} disabled={!props.isConnected} />

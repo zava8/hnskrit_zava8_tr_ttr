@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/hscii/hnskrit/master/src/assets/icons/64.png" align="left" height="64px" style="margin-right:10px">
 
-# hscii translate
+# hnskrit
 
 Quickly translate selected text on web page. In toolbar popup, you can translate input text.
 
@@ -14,7 +14,7 @@ Quickly translate selected text on web page. In toolbar popup, you can translate
 
 ## Backers
 
-Thank you to the awesome **[backers](https://github.com/hscii/hnskrit/blob/master/BACKERS.md)** who supported hscii translate!
+Thank you to the awesome **[backers](https://github.com/hscii/hnskrit/blob/master/BACKERS.md)** who supported hnskrit!
 
 [<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/patreon.png" alt="Became a Patreon" height="44px">](https://www.patreon.com/hscii)
 [<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/paypal.png" alt="Check out with PayPal">](https://www.paypal.me/sienoriExt)
@@ -29,7 +29,7 @@ Support Tab Session Manager by [becoming a sponsor](https://www.patreon.com/join
 
 ## Translation
 
-You can contribute by translating hscii translate on **[Crowdin](https://crowdin.com/project/hnskrit)**.
+You can contribute by translating hnskrit on **[Crowdin](https://crowdin.com/project/hnskrit)**.
 
 ## Developing
 
@@ -50,4 +50,4 @@ You can contribute by translating hscii translate on **[Crowdin](https://crowdin
 
 ## Privacy Policy
 
-[Privacy Policy](https://hnskrit.hscii.com/privacy-policy) of hscii translate
+[Privacy Policy](https://hnskrit.hscii.com/privacy-policy) of hnskrit

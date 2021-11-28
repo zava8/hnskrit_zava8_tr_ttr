@@ -30,23 +30,14 @@ const generalConfig = {
         loader: "babel-loader",
         exclude: /node_modules/,
         test: /\.(js|jsx)$/,
-        resolve: {
-          extensions: [".js", ".jsx"]
-        }
+        resolve: { extensions: [".js", ".jsx"] }
       },
       {
         test: /\.(scss|css)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              esModule: false
-            }
-          },
-          {
-            loader: "sass-loader"
-          }
+          { loader: "css-loader", options: { esModule: false } },
+          { loader: "sass-loader" }
         ]
       },
       {
@@ -55,12 +46,7 @@ const generalConfig = {
           "babel-loader",
           {
             loader: "react-svg-loader",
-            options: {
-              svgo: {
-                plugins: [{ removeTitle: false }],
-                floatPrecision: 2
-              }
-            }
+            options: { svgo: { plugins: [{ removeTitle: false }], floatPrecision: 2 } }
           }
         ]
       }
