@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import browserInfo from "browser-info";
 import browser from "webextension-polyfill";
-import ClearIcon from "../assets/icons/clear.svg";
-import RestetIcon from "../assets//icons/reset.svg";
+import ClearIcon from "../icons/clear.svg";
+import RestetIcon from "../icons/reset.svg";
 
 const normalizeKey = (key, keyCode) => {
   const alphabet = /^([a-z]|[A-Z])$/;

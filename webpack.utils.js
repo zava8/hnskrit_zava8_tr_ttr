@@ -56,6 +56,18 @@ const getCopyPlugins = (browserDir, outputDir = "dev", sourceDir = "src") => [
         to: path.resolve(__dirname, `${outputDir}/${browserDir}/assets/fonts`)
       },
       {
+        from: `${sourceDir}/options/icons`,
+        to: path.resolve(__dirname, `${outputDir}/${browserDir}/options/icons`)
+      },
+      {
+        from: `${sourceDir}/options/images`,
+        to: path.resolve(__dirname, `${outputDir}/${browserDir}/options/images`)
+      },
+      {
+        from: `${sourceDir}/options/fonts`,
+        to: path.resolve(__dirname, `${outputDir}/${browserDir}/options/fonts`)
+      },
+      {
         from: `${sourceDir}/_locales`,
         to: path.resolve(__dirname, `${outputDir}/${browserDir}/_locales`)
       },
@@ -81,6 +93,18 @@ const getFirefoxCopyPlugins = (browserDir, outputDir = "dev", sourceDir = "src")
       {
         from: `${sourceDir}/assets/fonts`,
         to: path.resolve(__dirname, `${outputDir}/${browserDir}/assets/fonts`)
+      },
+      {
+        from: `${sourceDir}/options/icons`,
+        to: path.resolve(__dirname, `${outputDir}/${browserDir}/options/icons`)
+      },
+      {
+        from: `${sourceDir}/options/images`,
+        to: path.resolve(__dirname, `${outputDir}/${browserDir}/options/images`)
+      },
+      {
+        from: `${sourceDir}/options/fonts`,
+        to: path.resolve(__dirname, `${outputDir}/${browserDir}/options/fonts`)
       },
       {
         from: `${sourceDir}/_locales`,
