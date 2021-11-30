@@ -33,7 +33,7 @@ export default class SettingsPage extends Component {
 
     return (
       <div>
-        <p className="contentTitle">{browser.i18n.getMessage("settingsLabel")}</p>
+        <p className="contentTitle">{browser.i18n.getMessage("settingslabel")}</p>
         <hr />
         {this.state.isInit ? settingsContent : ""}
       </div>
@@ -46,29 +46,29 @@ const additionalCategory = {
   elements: [
     {
       id: "importSettings",
-      title: "importSettingsLabel",
-      captions: ["importSettingsCaptionLabel"],
+      title: "importsettingslabel",
+      captions: ["importsettingscaptionlabel"],
       type: "file",
       accept: ".json",
-      value: "importButtonLabel",
+      value: "importbuttonlabel",
       onChange: importSettings
     },
     {
       id: "exportSettings",
-      title: "exportSettingsLabel",
-      captions: ["exportSettingsCaptionLabel"],
+      title: "eksportsettingslabel",
+      captions: ["eksportsettingscaptionlabel"],
       type: "button",
-      value: "exportButtonLabel",
+      value: "eksportbuttonlabel",
       onClick: async () => {
         await exportSettings();
       }
     },
     {
       id: "resetSettings",
-      title: "resetSettingsLabel",
-      captions: ["resetSettingsCaptionLabel"],
+      title: "resetsettingslabel",
+      captions: ["resetsettingscaptionlabel"],
       type: "button",
-      value: "resetSettingsButtonLabel",
+      value: "resetsettingsbuttonlabel",
       onClick: async () => {
         await resetAllSettings();
         location.reload(true);

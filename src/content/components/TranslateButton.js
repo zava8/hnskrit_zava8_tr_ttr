@@ -18,7 +18,7 @@ const calcPosition = () => {
 };
 
 export default props => {
-  const { position, shouldShow } = props;
+  const { position, shouldsho_ } = props;
   const buttonSize = parseInt(getSettings("buttonSize"));
   const { top, left } = calcPosition();
   const iconUrl = browser.extension.getURL("icons/512.png");
@@ -29,7 +29,7 @@ export default props => {
   return (
     <div
       style={buttonStyle}
-      className={`hnskrit-button ${shouldShow ? "isShow" : ""}`}
+      className={`hnskrit-button ${shouldsho_ ? "issho_" : ""}`}
       onClick={props.handleButtonClick}
     />
   );

@@ -24,7 +24,7 @@ export default class InputArea extends Component {
     const { inputText, sourceLang } = this.props;
     return (
       <div id="inputArea">
-        <textarea value={inputText} ref="textarea" placeholder={browser.i18n.getMessage("initialTextArea")}
+        <textarea value={inputText} ref="textarea" placeholder={browser.i18n.getMessage("initialtekstarea")}
           onChange={this.handleInputText} autoFocus spellCheck={false} dir="auto" />
         <div className="listen"> {sourceLang && <ListenButton text={inputText} lang={sourceLang} />} </div>
       </div>

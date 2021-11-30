@@ -5,18 +5,18 @@ import { getSettings } from "src/settings/settings";
 
 const logDir = "background/menus";
 
-export const showMenus = () => {
-  if (getSettings("ifShowMenu")) {
+export const sho_Menus = () => {
+  if (getSettings("ifsho_Menu")) {
     removeMenus();
     createMenus();
   } else removeMenus();
 };
 
-export const onMenusShownListener = (info, tab) => {
+export const onMenussho_nListener = (info, tab) => {
   //テキストまたはリンクの選択時はページ翻訳を非表示にする
   if (info.contexts.includes("selection") || info.contexts.includes("link")) {
-    //passwordにすることで事実上無効にする
-    browser.contextMenus.update("translatePage", { contexts: ["password"] });
+    //passvordにすることで事実上無効にする
+    browser.contextMenus.update("translatePage", { contexts: ["passvord"] });
   } else {
     browser.contextMenus.update("translatePage", { contexts: ["all"] });
   }
@@ -36,26 +36,26 @@ function createMenus() {
   if (isValidContextsTypeTab) {
     browser.contextMenus.create({
       id: "translatePageOnTab",
-      title: browser.i18n.getMessage("translatePageMenu"),
+      title: browser.i18n.getMessage("translatepagemenu"),
       contexts: ["tab"]
     });
   }
 
   browser.contextMenus.create({
     id: "translatePage",
-    title: browser.i18n.getMessage("translatePageMenu"),
+    title: browser.i18n.getMessage("translatepagemenu"),
     contexts: ["all"]
   });
 
   browser.contextMenus.create({
     id: "translateText",
-    title: browser.i18n.getMessage("translateTextMenu"),
+    title: browser.i18n.getMessage("translatetekstmenu"),
     contexts: ["selection"]
   });
 
   browser.contextMenus.create({
     id: "translateLink",
-    title: browser.i18n.getMessage("translateLinkMenu"),
+    title: browser.i18n.getMessage("translatelinkmenu"),
     contexts: ["link"]
   });
 }

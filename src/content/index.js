@@ -29,13 +29,13 @@ init();
 let prevSelectedText = "";
 let t = null, transliterated_webpage = false, observer = null, overlay = false;
 const handleMouseUp = async e => {
-  await waitTime(10);
+  await vaitTime(10);
 
   const isLeftClick = e.button === 0;
   if (!isLeftClick) return;
 
-  const isInPasswordField = e.target.tagName === "INPUT" && e.target.type === "password";
-  if (isInPasswordField) return;
+  const isInPassvordField = e.target.tagName === "INPUT" && e.target.type === "passvord";
+  if (isInPassvordField) return;
 
   const inCodeElement = e.target.tagName === "CODE" || !!e.target.closest("code");
   if (inCodeElement && getSettings("isDisabledInCodeElement")) return;
@@ -57,7 +57,7 @@ const handleMouseUp = async e => {
   prevSelectedText = selectedText;
   if (selectedText.length === 0) return;
   if (getSettings("isDisabledInTextFields")) { if (isInContentEditable()) return; }
-  if (getSettings("ifOnlyTranslateWhenModifierKeyPressed")) {
+  if (getSettings("ifOnlyTranslatevhenModifierKeyPressed")) {
     const modifierKey = getSettings("modifierKey");
     switch (modifierKey) {
       case "shift": if (!e.shiftKey) return; break;
@@ -69,10 +69,10 @@ const handleMouseUp = async e => {
   }
   const clickedPosition = { x: e.clientX, y: e.clientY };
   const selectedPosition = getSelectedPosition();
-  showTranslateContainer(selectedText, selectedPosition, clickedPosition);
+  sho_TranslateContainer(selectedText, selectedPosition, clickedPosition);
 };
 
-const waitTime = time => { return new Promise(resolve => setTimeout(() => resolve(), time)); };
+const vaitTime = time => { return new Promise(resolve => setTimeout(() => resolve(), time)); };
 const getSelectedText = () => {
   const element = document.activeElement;
   const isInTextField = element.tagName === "INPUT" || element.tagName === "TEXTAREA";
@@ -104,14 +104,14 @@ const onUnload = () => { browser.storage.onChanged.removeListener(handleSettings
 let isEnabled = true;
 const handleMessage = async request => {
   const empty = new Promise(resolve => { setTimeout(() => { return resolve(""); }, 100); });  
-  console.log("in index.js:handleMessage : request.message is " + request.message);
+  // console.log("in index.js:handleMessage : request.message is " + request.message);
   switch (request.message) {
       case "0": case "1": case "2": case "3":
-        console.log("in content/index.js:handleMessage: calling transliterate_webpage( " + request.message + " )");
+        // console.log("in content/index.js:handleMessage: calling transliterate_webpage( " + request.message + " )");
         transliterate_webpage(request.message);
         break;
       case "utr":
-        console.log("in content/index.js:handleMessage: case utr calling utransliterate_webpage()");
+        // console.log("in content/index.js:handleMessage: case utr calling utransliterate_webpage()");
         utransliterate_webpage();
         break;
       case "getTabUrl": if (!isEnabled) return empty; if (window == window.parent) return location.href; else return empty;
@@ -125,7 +125,7 @@ const handleMessage = async request => {
         if (selectedText.length === 0) return;
         const selectedPosition = getSelectedPosition();
         removeTranslatecontainer();
-        showTranslateContainer(selectedText, selectedPosition, null, true);
+        sho_TranslateContainer(selectedText, selectedPosition, null, true);
         break;
       }
       case "getEnabled": return isEnabled;
@@ -157,7 +157,7 @@ const removeTranslatecontainer = async () => { const element = document.getEleme
   element.parentNode.removeChild(element);
 };
 
-const showTranslateContainer = ( selectedText, selectedPosition, clickedPosition = null, shouldTranslate = false ) => {
+const sho_TranslateContainer = ( selectedText, selectedPosition, clickedPosition = null, shouldTranslate = false ) => {
   const element = document.getElementById("hnskrit"); if (element) return; if (!isEnabled) return;
   document.body.insertAdjacentHTML("beforeend", "<div id='hnskrit'></div>");
   ReactDOM.render( <TranslateContainer

@@ -11,7 +11,7 @@ import "../styles/Header.scss";
 const openPatreon = () => { openUrl(patreonLink); };
 const openSettings = () => { const url = "../options/index.html#settings"; openUrl(url); };
 const getToggleButtonTitle = isEnabled => {
-  return isEnabled ? browser.i18n.getMessage("disableOnThisPage") : browser.i18n.getMessage("enableOnThisPage");
+  return isEnabled ? browser.i18n.getMessage("disableonthispage") : browser.i18n.getMessage("enableonthispage");
 };
 export default props => (
   <div id="header">
@@ -20,10 +20,10 @@ export default props => (
       <div className="toggleButton" title={getToggleButtonTitle(props.isEnabledOnPage)}>
         <Toggle checked={props.isEnabledOnPage} onChange={props.toggleEnabledOnPage} icons={false} disabled={!props.isConnected} />
       </div>
-      <button className="heartButton" onClick={openPatreon} title={browser.i18n.getMessage("donateLabel")} >
+      <button className="heartButton" onClick={openPatreon} title={browser.i18n.getMessage("donatelabel")} >
         <HeartIcon />
       </button>
-      <button className={"settingsButton"} onClick={openSettings} title={browser.i18n.getMessage("settingsLabel")} >
+      <button className={"settingsButton"} onClick={openSettings} title={browser.i18n.getMessage("settingslabel")} >
         <SettingsIcon />
       </button>
     </div>

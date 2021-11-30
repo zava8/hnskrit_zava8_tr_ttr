@@ -136,11 +136,11 @@ export default class TranslatePanel extends Component { constructor(props) { sup
       this.props.candidateText !== nextProps.candidateText ||
       this.props.position !== nextProps.position;
 
-    if (isChangedContents && nextProps.shouldShow) this.setState({ shouldResize: true });
+    if (isChangedContents && nextProps.shouldsho_) this.setState({ shouldResize: true });
   };
 
   componentDidUpdate = () => {
-    if (!this.state.shouldResize || !this.props.shouldShow) return;
+    if (!this.state.shouldResize || !this.props.shouldsho_) return;
     const panelPosition = this.calcPosition();
     const { panelWidth, panelHeight } = this.calcSize();
     const isOverflow = panelHeight == parseInt(getSettings("height"));
@@ -155,7 +155,7 @@ export default class TranslatePanel extends Component { constructor(props) { sup
   };
 
   render = () => {
-    const { shouldShow, selectedText, currentLang, resultText, candidateText, statusText } = this.props;
+    const { shouldsho_, selectedText, currentLang, resultText, candidateText, statusText } = this.props;
     const isError = statusText !== "OK";
     const { width, height } = this.state.shouldResize
       ? { width: parseInt(getSettings("width")), height: parseInt(getSettings("height")) }
@@ -181,7 +181,7 @@ export default class TranslatePanel extends Component { constructor(props) { sup
 
     return (
       <div
-        className={`hnskrit-panel ${shouldShow ? "isShow" : ""}`}
+        className={`hnskrit-panel ${shouldsho_ ? "issho_" : ""}`}
         ref="panel"
         style={panelStyles}
       >
@@ -202,7 +202,7 @@ export default class TranslatePanel extends Component { constructor(props) { sup
                   href={`https://translate.google.com/?sl=auto&tl=${currentLang}&text=${encodeURIComponent(selectedText)}`}
                   target="_blank"
                 >
-                  {browser.i18n.getMessage("openInGoogleLabel")}
+                  {browser.i18n.getMessage("open_in_google_label")}
                 </a>
               </p>
             )}

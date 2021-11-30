@@ -25,10 +25,10 @@ export default class CopyButton extends Component {
     return (
       <div className="copy">
         {this.state.isCopied && (
-          <span className="copiedText">{browser.i18n.getMessage("copiedLabel")}</span>
+          <span className="copiedText">{browser.i18n.getMessage("copiedlabel")}</span>
         )}
         <CopyToClipboard text={text} onCopy={this.handleCopy}>
-          <button className="copyButton" title={browser.i18n.getMessage("copyLabel")}>
+          <button className="copyButton" title={browser.i18n.getMessage("copylabel")}>
             <CopyIcon />
           </button>
         </CopyToClipboard>

@@ -5,7 +5,7 @@ import PopupPage from "./components/PopupPage";
 import log from "loglevel";
 const logDir = "popup";
 function onLanguageDetected(lang) {
-    console.log(`Language is: ${lang}`);
+    // console.log(`Language is: ${lang}`);
     switch(lang){
         case "hi" : case "mr": case "gu": case "pa": case "bh":
         case "bn" : case "or": case "as":

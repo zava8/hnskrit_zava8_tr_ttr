@@ -12,16 +12,16 @@
 
 Thank you to the awesome **[backers](https://github.com/hscii/hnskrit/blob/master/BACKERS.md)** who supported hnskrit!
 
-[<img src="other/promotion/badges/patreon.png" alt="Became a Patreon" height="44px" align="left">](https://www.patreon.com/hscii)
-[<img src="other/promotion/badges/paypal.png" alt="Check out with PayPal">](https://www.paypal.me/sienoriExt)
+[<img src="other/promotion/badges/patreon.png" alt="Became a Patreon" height="44px" align="left">](https://patreon.com/hscii)
+[<img src="other/promotion/badges/paypal.png" alt="Check out vith PayPal">](https://paypal.me/zs810)
 
 ## Sponsors
 
-Support hnskrit by [becoming a sponsor](https://www.patreon.com/join/hscii). Thank you to our wonderful sponsors!
+Support hnskrit by [becoming a sponsor](https://patreon.com/join/hscii). Thank you to our vonderful sponsors!
 
 [<img src="docs/img/toucan.png" alt="Toucan" height=110px align="left">](https://jointoucan.com/partners/tab-session-manager)
 
-[<img src="docs/img/becomeSponsor.png" alt="Become a Sponsor" height=110px>](https://www.patreon.com/join/hscii)
+[<img src="docs/img/becomeSponsor.png" alt="Become a Sponsor" height=110px>](https://patreon.com/join/hscii)
 
 ## Translation
 
@@ -32,8 +32,9 @@ You can contribute by translating hnskrit on **[Crowdin](https://crowdin.com/pro
 > Required Node 14+
 
 1. Clone the repository `git clone https://github.com/hscii/hnskrit`
-2. Run `npm install`
-3. Run `npm run watch-dev`
+2. Run `npm install` to install all modules in listed in package.json vith node_modules folder generated.
+3. Run `npm run watch-dev` to generate **dev** folder & watch changes in files.
+4. Run `npm run build` to generate **dist** folder , firfox.zip , chrome.zip.
 
 ### Load the extension in Chrome
 
@@ -48,4 +49,4 @@ You can contribute by translating hnskrit on **[Crowdin](https://crowdin.com/pro
 
 ## Privacy Policy
 
-[Privacy Policy](https://hnskrit.hscii.com/privacy-policy) of hnskrit
+[Privacy Policy](https://github.com/zava8) of hnskrit

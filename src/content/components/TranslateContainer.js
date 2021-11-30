@@ -32,45 +32,45 @@ const matchesTargetLang = async selectedText => {
 
 export default class TranslateContainer extends Component {
   constructor(props) { super(props);
-    this.state = { shouldShowButton: false, buttonPosition: { x: 0, y: 0 }, shouldShowPanel: false,
+    this.state = { shouldsho_Button: false, buttonPosition: { x: 0, y: 0 }, shouldsho_Panel: false,
       panelPosition: { x: 0, y: 0 }, currentLang: getSettings("targetLang"), resultText: "", candidateText: "", statusText: "OK" };
     this.selectedText = props.selectedText; this.selectedPosition = props.selectedPosition;
     this.t = new transliterator();
   }
 
   componentDidMount = () => {
-    if (this.props.shouldTranslate) this.showPanel();
+    if (this.props.shouldTranslate) this.sho_Panel();
     else this.handleTextSelect(this.props.clickedPosition);
   };
 
   handleTextSelect = async clickedPosition => {
-    const onSelectBehavior = getSettings("whenSelectText");
-    if (onSelectBehavior === "dontShowButton") return this.props.removeContainer();
+    const onSelectBehavior = getSettings("vhenSelectText");
+    if (onSelectBehavior === "dontsho_Button") return this.props.removeContainer();
 
     if (getSettings("ifCheckLang")) {
       const matchesLang = await matchesTargetLang(this.selectedText);
       if (matchesLang) return this.props.removeContainer();
     }
 
-    if (onSelectBehavior === "showButton") this.showButton(clickedPosition);
-    else if (onSelectBehavior === "showPanel") this.showPanel(clickedPosition);
+    if (onSelectBehavior === "sho_Button") this.sho_Button(clickedPosition);
+    else if (onSelectBehavior === "sho_Panel") this.sho_Panel(clickedPosition);
   };
 
-  showButton = clickedPosition => {
-    this.setState({ shouldShowButton: true, buttonPosition: clickedPosition });
+  sho_Button = clickedPosition => {
+    this.setState({ shouldsho_Button: true, buttonPosition: clickedPosition });
   };
 
   hideButton = () => {
-    this.setState({ shouldShowButton: false });
+    this.setState({ shouldsho_Button: false });
   };
 
   handleButtonClick = e => {
     const clickedPosition = { x: e.clientX, y: e.clientY };
-    this.showPanel(clickedPosition);
+    this.sho_Panel(clickedPosition);
     this.hideButton();
   };
 
-  showPanel = async (clickedPosition = null) => {
+  sho_Panel = async (clickedPosition = null) => {
     const panelReferencePoint = getSettings("panelReferencePoint");
     const useClickedPosition = panelReferencePoint === "clickedPoint" && clickedPosition !== null;
     const panelPosition = useClickedPosition ? clickedPosition : this.selectedPosition;
@@ -85,25 +85,25 @@ export default class TranslateContainer extends Component {
 
     const ztrText = this.t.transliterate_input(result.resultText, "0");
     this.setState({
-      shouldShowPanel: true,
+      shouldsho_Panel: true,
       panelPosition: panelPosition,
       resultText: ztrText, //result.resultText,
-      candidateText: getSettings("ifShowCandidate") ? result.candidateText : "",
+      candidateText: getSettings("ifsho_Candidate") ? result.candidateText : "",
       statusText: result.statusText,
       currentLang: shouldSwitchSecondLang ? secondLang : targetLang
     });
   };
 
   hidePanel = () => {
-    this.setState({ shouldShowPanel: false });
+    this.setState({ shouldsho_Panel: false });
   };
 
   render = () => {
     return (
       <div>
-        <TranslateButton shouldShow={this.state.shouldShowButton} position={this.state.buttonPosition} handleButtonClick={this.handleButtonClick} />
+        <TranslateButton shouldsho_={this.state.shouldsho_Button} position={this.state.buttonPosition} handleButtonClick={this.handleButtonClick} />
         <TranslatePanel
-          shouldShow={this.state.shouldShowPanel}
+          shouldsho_={this.state.shouldsho_Panel}
           position={this.state.panelPosition}
           selectedText={this.selectedText}
           currentLang={this.state.currentLang}

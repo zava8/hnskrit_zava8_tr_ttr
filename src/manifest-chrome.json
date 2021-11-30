@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "version": "1.0.0",
-  "name": "__MSG_extName__",
-  "description": "__MSG_extDescription__",
+  "name": "__MSG_extname__",
+  "description": "__MSG_extdescription__",
   "default_locale": "en",
   "permissions": [ "<all_urls>", "storage", "contextMenus" ],
   "options_ui": { "page": "options/index.html", "open_in_tab": true },
@@ -29,7 +29,7 @@
   "web_accessible_resources": [ "assets/icons/hnskrit_logo512.png" , "assets/images/phoniks_smal_larz.jpg" ],
   "commands": {
     "_execute_browser_action": { "description": "__MSG_openPopupDescription__", "suggested_key": { "default": "Ctrl+Shift+Space" } },
-    "translateSelectedText": { "description": "__MSG_translateTextMenu__", "suggested_key": { "default": "Ctrl+Space" } },
+    "translateSelectedText": { "description": "__MSG_translatetekstmenu__", "suggested_key": { "default": "Ctrl+Space" } },
     "translatePage": { "description": "__MSG_translatePageMenu__" }
   }
 }

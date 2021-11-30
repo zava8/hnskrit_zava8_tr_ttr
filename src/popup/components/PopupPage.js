@@ -59,14 +59,14 @@ export default class PopupPage extends Component {
     // var fullURL = browser.runtime.getURL("beasts/frog.html");
     // console.log(fullURL);
   };
-  handleInputText = inputText => { log.log(logDir, "handleInputText()", inputText);
+  handleInputText = inputText => { // log.log(logDir, "handleInputText()", inputText);
     this.setState({ inputText: inputText });
-    const waitTime = getSettings("waitTime");
+    const vaitTime = getSettings("vaitTime");
     clearTimeout(this.inputTimer);
     this.inputTimer = setTimeout(async () => {
       const result = await this.translateText(inputText, this.state.targetLang);
       this.switchSecondLang(result);
-    }, waitTime);
+    }, vaitTime);
   };
   setLangHistory = lang => {
     let langHistory = getSettings("langHistory") || [];
@@ -75,13 +75,13 @@ export default class PopupPage extends Component {
     setSettings("langHistory", langHistory);
     this.setState({ langHistory: langHistory });
   };
-  handleLangChange = lang => { log.info(logDir, "handleLangChange()", lang);
+  handleLangChange = lang => { // log.info(logDir, "handleLangChange()", lang);
     this.setState({ targetLang: lang });
     const inputText = this.state.inputText;
     if (inputText !== "") this.translateText(inputText, lang, targetZtr);
     this.setLangHistory(lang);
   };
-  translateText = async (text, targetLang, targetZtr) => { log.info(logDir, "translateText()", text, targetLang, targetZtr);
+  translateText = async (text, targetLang, targetZtr) => { // log.info(logDir, "translateText()", text, targetLang, targetZtr);
     const result = await translate(text, "auto", targetLang);
     var ztrText = "";
     if (result.resultText !== "") {
@@ -109,11 +109,11 @@ export default class PopupPage extends Component {
     const equalsSourceAndTarget = result.sourceLanguage === this.state.targetLang && result.percentage > 0;
     const equalsSourceAndDefault = result.sourceLanguage === defaultTargetLang && result.percentage > 0;
     if (!this.isSwitchedSecondLang) {
-      if (equalsSourceAndTarget && equalsSourceAndDefault) { log.info(logDir, "=>switchSecondLang()", result, secondLang);
+      if (equalsSourceAndTarget && equalsSourceAndDefault) { // log.info(logDir, "=>switchSecondLang()", result, secondLang);
         this.handleLangChange(secondLang); this.isSwitchedSecondLang = true;
       }
     } else {
-      if (!equalsSourceAndDefault) { log.info(logDir, "=>switchSecondLang()", result, defaultTargetLang);
+      if (!equalsSourceAndDefault) { // log.info(logDir, "=>switchSecondLang()", result, defaultTargetLang);
         this.handleLangChange(defaultTargetLang); this.isSwitchedSecondLang = false;
       }
     }
@@ -141,9 +141,12 @@ export default class PopupPage extends Component {
         <Footer tabUrl={this.state.tabUrl} targetLang={this.state.targetLang} targetZtr={this.state.targetZtr}
           langHistory={this.state.langHistory} handleLangChange={this.handleLangChange}
           handleZtrChange={this.handleZtrChange}/>
-          <br/>
+          <a id="goto-donate" target="_blank" href="https://paypal.me/zs810" title="support this prozect">support this prozekt !!! donate</a>
+         <br/>
+         <br/>
+         <br/>
           <img src={browser.runtime.getURL("assets/images/phoniks_smal_larz.jpg")}></img>
-      </div>
+    </div>
     );
   }
 }

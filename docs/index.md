@@ -2,52 +2,52 @@
 
 # hnskrit
 
-Quickly translate selected text on web page. In toolbar popup, you can translate input text.
+quickly translate selected text on veb page. in toolbar popup, you can translate input text.
 
-## Download
+## dovnload
 
-[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/firefox.png" align="left" alt="for Firefox">](https://addons.mozilla.org/firefox/addon/hnskrit/)
+[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/firefox.png" align="left" alt="for firefox">](https://addons.mozilla.org/firefox/addon/hnskrit/)
 &ensp;
-[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/chrome.png" alt="for Chrome" height="60px">](https://chrome.google.com/webstore/detail/hnskrit/ibplnjkanclpjokhdolnendpplpjiace)
+[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/chrome.png" alt="for chrome" height="60px">](https://chrome.google.com/webstore/detail/hnskrit/ibplnjkanclpjokhdolnendpplpjiace)
 
-[for Microsoft Edge](https://microsoftedge.microsoft.com/addons/detail/cllnohpbfenopiakdcjmjcbaeapmkcdl)
+[for microsoft edge](https://microsoftedge.microsoft.com/addons/detail/cllnohpbfenopiakdcjmjcbaeapmkcdl)
 
-## Backers
+## backers
 
-Thank you to the awesome **[backers](https://github.com/hscii/hnskrit/blob/master/BACKERS.md)** who supported hnskrit!
+thank you to the avesome **[backers](https://github.com/hscii/hnskrit/blob/master/backers.md)** vho supported hnskrit!
 
-[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/patreon.png" alt="Became a Patreon" height="44px">](https://www.patreon.com/hscii)
-[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/paypal.png" alt="Check out with PayPal">](https://www.paypal.me/sienoriExt)
+[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/patreon.png" alt="became a patreon" height="44px">](https://patreon.com/hscii)
+[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/other/promotion/badges/paypal.png" alt="check out vith paypal">](https://paypal.me/zs810)
 
-## Sponsors
+## sponsors
 
-Support Tab Session Manager by [becoming a sponsor](https://www.patreon.com/join/hscii). Thank you to our wonderful sponsors!
+support tab session manager by [becoming a sponsor](https://patreon.com/join/hscii). thank you to our vonderful sponsors!
 
-[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/docs/img/toucan.png" alt="Toucan" height=110px>](https://jointoucan.com/partners/tab-session-manager)
+[<img src="img/toucan.png" alt="toucan" height=110px>](https://jointoucan.com/partners/tab-session-manager)
 &ensp;
-[<img src="https://raw.githubusercontent.com/hscii/hnskrit/master/docs/img/becomeSponsor.png" alt="Become a Sponsor" height=110px>](https://www.patreon.com/join/hscii)
+[<img src="img/becomesponsor.png" alt="become a sponsor" height=110px>](https://patreon.com/join/hscii)
 
-## Translation
+## translation
 
-You can contribute by translating hnskrit on **[Crowdin](https://crowdin.com/project/hnskrit)**.
+you can contribute by translating hnskrit on **[crowdin](https://crowdin.com/project/hnskrit)**.
 
-## Developing
+## developing
 
-1. Clone the repository `git clone https://github.com/hscii/hnskrit`
-2. Run `npm install`
-3. Run `npm run watch-dev`
+1. clone the repository `git clone https://github.com/hscii/hnskrit`
+2. run `npm install`
+3. run `npm run watch-dev`
 
-### Load the extension in Chrome
+### load the extension in chrome
 
-1. Open Chrome browser and navigate to `chrome://extensions`
-2. Select "Developer Mode" and then click "Load unpacked extension..."
-3. From the file browser, choose to `hnskrit/dev/chrome`
+1. open chrome brovser and navigate to `chrome://extensions`
+2. select "developer mode" and then click "load unpacked extension..."
+3. from the file brovser, choose to `hnskrit/dev/chrome`
 
-### Load the extension in Firefox
+### load the extension in firefox
 
-1. Open Firefox browser and navigate to `about:debugging`
-2. Click "Load Temporary Add-on" and from the file browser, choose `hnskrit/dev/firefox`
+1. open firefox brovser and navigate to `about:debugging`
+2. click "load temporary add-on" and from the file brovser, choose `hnskrit/dev/firefox`
 
-## Privacy Policy
+## privacy policy
 
-[Privacy Policy](https://hnskrit.hscii.com/privacy-policy) of hnskrit
+[privacy policy](https://hnskrit.hscii.com/privacy-policy) of hnskrit

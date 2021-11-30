@@ -55,7 +55,7 @@
   },
   "homepage": "https://github.com/zava8/hnskrit_zava8_tr_ttr#readme",
   "main": ".src/manifest.json",
-  "keywords": [
+  "keyvords": [
     "webextensions", "firefox", "chrome",
     "translate", "transliterate", "phonetic",
     "hindi", "hinglish", "malayalam",

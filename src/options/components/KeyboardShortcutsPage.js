@@ -42,8 +42,8 @@ export default class KeyboardShortcutPage extends Component {
       elements: [
         {
           id: "keyboard",
-          title: "keyboardShortcutsLabel",
-          captions: ["setKeyboardShortCutsMessage"],
+          title: "keyboardshortcutslabel",
+          captions: ["setkeyboardshortcutsmessage"],
           type: "none",
           childElements: commandElements
         }
@@ -52,7 +52,7 @@ export default class KeyboardShortcutPage extends Component {
 
     return (
       <div>
-        <p className="contentTitle">{browser.i18n.getMessage("keyboardShortcutsLabel")}</p>
+        <p className="contentTitle">{browser.i18n.getMessage("keyboardshortcutslabel")}</p>
         <hr />
         {this.state.isInit && <ul>{<CategoryContainer {...shortcutCategory} />}</ul>}
       </div>

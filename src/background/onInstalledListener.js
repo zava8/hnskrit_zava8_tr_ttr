@@ -19,7 +19,7 @@ export default async details => {
   await initSettings();
   initShortcuts();
 
-  const isShowOptionsPage = getSettings("isShowOptionsPageWhenUpdated");
-  if (isShowOptionsPage) openOptionsPage(false);
-  setSettings("isShowUpdated", true);
+  const issho_OptionsPage = getSettings("issho_OptionsPagevhenUpdated");
+  if (issho_OptionsPage) openOptionsPage(false);
+  setSettings("issho_Updated", true);
 };

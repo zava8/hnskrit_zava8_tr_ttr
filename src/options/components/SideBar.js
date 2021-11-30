@@ -20,15 +20,15 @@ const SideBar = props => (
             : ""
         }`}
       >
-        <Link to="/settings">{browser.i18n.getMessage("settingsLabel")}</Link>
+        <Link to="/settings">{browser.i18n.getMessage("settingslabel")}</Link>
       </li>
       {isValidShortcuts && (
         <li className={`sideBarItem ${props.location.pathname == "/shortcuts" ? "selected" : ""}`}>
-          <Link to="/shortcuts">{browser.i18n.getMessage("shortcutsLabel")}</Link>
+          <Link to="/shortcuts">{browser.i18n.getMessage("shortcutslabel")}</Link>
         </li>
       )}
       <li className={`sideBarItem ${props.location.pathname == "/information" ? "selected" : ""}`}>
-        <Link to="/information">{browser.i18n.getMessage("informationLabel")}</Link>
+        <Link to="/information">{browser.i18n.getMessage("informationlabel")}</Link>
       </li>
     </ul>
   </div>

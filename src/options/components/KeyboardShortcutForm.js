@@ -74,12 +74,12 @@ export default class KeyboardShortcutForm extends Component {
     const modifierKeys = /^(Control|Alt|Shift|Meta)$/;
 
     if (mediaKeys.test(normalizedKey) || funcKeys.test(normalizedKey)) error = "";
-    else if (modifierKeys.test(e.key)) error = browser.i18n.getMessage("typeLetterMessage");
+    else if (modifierKeys.test(e.key)) error = browser.i18n.getMessage("typelettermessage");
     else if (!e.ctrlKey && !e.altKey && !e.metaKey)
       error = this.isMac
-        ? browser.i18n.getMessage("includeMacModifierKeysMessage")
-        : browser.i18n.getMessage("includeModifierKeysMessage");
-    else if (normalizedKey == "") error = browser.i18n.getMessage("invalidLetterMessage");
+        ? browser.i18n.getMessage("includemacmodifierkeysmessage")
+        : browser.i18n.getMessage("includemodifierkeysmessage");
+    else if (normalizedKey == "") error = browser.i18n.getMessage("invalidlettermessage");
 
     const value = `${e.ctrlKey ? (this.isMac ? "MacCtrl+" : "Ctrl+") : ""}${
       e.metaKey && this.isMac ? "Command+" : ""
@@ -101,7 +101,7 @@ export default class KeyboardShortcutForm extends Component {
       await browser.commands.update({ name: this.props.id, shortcut: shortcut });
       this.setState({ shortcut: shortcut || "" });
     } catch (e) {
-      this.setState({ error: browser.i18n.getMessage("invalidShortcutMessage") });
+      this.setState({ error: browser.i18n.getMessage("invalidshortcutmessage") });
     }
   }
 
@@ -124,7 +124,7 @@ export default class KeyboardShortcutForm extends Component {
             type="text"
             id={this.props.id}
             value={this.state.value}
-            placeholder={browser.i18n.getMessage("typeShortcutMessage")}
+            placeholder={browser.i18n.getMessage("typeshortcutmessage")}
             onKeyDown={e => this.handleKeyDown(e)}
             onKeyUp={e => this.handleKeyUp(e)}
             onChange={e => this.handleChange(e)}

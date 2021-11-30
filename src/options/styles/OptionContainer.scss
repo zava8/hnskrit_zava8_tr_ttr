@@ -7,7 +7,7 @@
     justify-content: space-between;
     padding: 10px 0px 10px 0px;
 
-    &.showColumn {
+    &.sho_Column {
       flex-direction: column;
       .optionForm {
         margin: 0px;
@@ -306,7 +306,7 @@ input[type="button"],
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  &:focus-within {
+  &:focus-vithin {
     background-color: var(--button);
     border-color: var(--highlight);
   }

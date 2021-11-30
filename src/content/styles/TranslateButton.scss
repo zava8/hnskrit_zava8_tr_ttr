@@ -17,15 +17,15 @@
     transition-duration: 200ms;
     opacity: 0;
     visibility: hidden;
-    &.isShow {
+    &.issho_ {
       opacity: 1;
       visibility: visible;
       transition-duration: 0ms;
-      animation: hnskrit-showButton 200ms;
+      animation: hnskrit-sho_Button 200ms;
     }
   }
 
-  @keyframes hnskrit-showButton {
+  @keyframes hnskrit-sho_Button {
     0% {
       transform: scale3d(1, 1, 1);
     }

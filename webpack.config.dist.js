@@ -79,7 +79,7 @@ module.exports = [
       ...getMiniCssExtractPlugin(),
       ...getHTMLPlugins("chrome", config.tempDirectory, config.chromePath),
       ...getCopyPlugins("chrome", config.tempDirectory, config.chromePath),
-      getZipPlugin(`${config.extName}-for-chrome-${extVersion}`, config.distDirectory)
+      getZipPlugin(`${config.extname}-for-chrome-${extVersion}`, config.distDirectory)
     ]
   },
   {
@@ -92,7 +92,7 @@ module.exports = [
       ...getMiniCssExtractPlugin(),
       ...getHTMLPlugins("firefox", config.tempDirectory, config.firefoxPath),
       ...getFirefoxCopyPlugins("firefox", config.tempDirectory, config.firefoxPath),
-      getZipPlugin(`${config.extName}-for-firefox-${ffExtVersion}`, config.distDirectory)
+      getZipPlugin(`${config.extname}-for-firefox-${ffExtVersion}`, config.distDirectory)
     ]
   },
   {
@@ -117,7 +117,7 @@ module.exports = [
           }
         ]
       }),
-      getZipPlugin(`copiedSource-${config.extName}-${ffExtVersion}`, config.distDirectory, "other/")
+      getZipPlugin(`copiedSource-${config.extname}-${ffExtVersion}`, config.distDirectory, "other/")
     ]
   }
 ];

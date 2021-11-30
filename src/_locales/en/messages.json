@@ -1,410 +1,410 @@
 {
-  "extName": {
+  "extname": {
     "message": "hnskrit"
   },
-  "extDescription": {
-    "message": "Quickly translate selected text on web page. In toolbar popup, you can translate input text."
+  "extdescription": {
+    "message": "quickly translate selected text on web page. in toolbar popup, you can translate input text."
   },
-  "donateWithPaypalLabel": {
-    "message": "Donate with PayPal"
+  "donatevithpaypallabel": {
+    "message": "donate vith paypal"
   },
-  "donateLabel": {
-    "message": "Donate"
+  "donatelabel": {
+    "message": "donate"
   },
-  "enableOnThisPage": {
-    "message": "Enable translation on this page"
+  "enableonthispage": {
+    "message": "enable translation on this page"
   },
-  "disableOnThisPage": {
-    "message": "Disable translation on this page"
+  "disableonthispage": {
+    "message": "disable translation on this page"
   },
-  "initialTextArea": {
-    "message": "Enter text"
+  "initialtekstarea": {
+    "message": "enter tekst"
   },
-  "showLink": {
+  "sho_link": {
     "message": "go"
   },
   "shokod": {
     "message": "kod"
   },
-  "openInGoogleLabel": {
-    "message": "Open in Google Translate"
+  "open_in_google_label": {
+    "message": "open in google translate"
   },
-  "copyLabel": {
-    "message": "Copy"
+  "copylabel": {
+    "message": "copy"
   },
-  "copiedLabel": {
-    "message": "Copied."
+  "copiedlabel": {
+    "message": "copied."
   },
-  "listenLabel": {
-    "message": "Listen"
+  "listenlabel": {
+    "message": "listen"
   },
-  "targetLangLabel": {
-    "message": "Target language"
+  "targetlanglabel": {
+    "message": "target language"
   },
-  "targetZtrLabel": {
-    "message": "Target ztr"
+  "targetztrlabel": {
+    "message": "target ztr"
   },
-  "langList": {
-    "message": "af:Afrikaans, sq:Albanian, am:Amharic, ar:Arabic, hy:Armenian, az:Azerbaijani, eu:Basque, be:Belarusian, bn:Bengali, bs:Bosnian, bg:Bulgarian, ca:Catalan, ceb:Cebuano, ny:Chewa, zh-CN:Chinese (PRC), zh-TW:Chinese (Taiwan), co:Corsican, hr:Croatian, cs:Czech, da:Danish, nl:Dutch, en:English, eo:Esperanto, et:Estonian, fi:Finnish, fr:French, fy:Frisian, gl:Galician, ka:Georgian, de:German, el:Greek, gu:Gujarati, ht:Haitian, ha:Hausa, haw:Hawaiian, he:Hebrew, hi:Hindi, hu:Hungarian, is:Icelandic, ig:Igbo, id:Indonesian, ga:Irish, it:Italian, ja:Japanese, jv:Javanese, kn:Kannada, kk:Kazakh, km:Khmer, ky:Kirghiz, ko:Korean, ku:Kurdish, lo:Laotian, la:Latin, lv:Latvian, lt:Lithuanian, lb:Luxembourgish, mk:Macedonian, mg:Malagasy, ms:Malay, ml:Malayalam, mt:Maltese, mi:Maori, mr:Marathi, mn:Mongolian, hmn:Monk, my:Myanmar, ne:Nepali, no:Norwegian, fa:Persian, pl:Polish, pt:Portuguese, pa:Punjabi, ps:Pushto, ro:Romanian, ru:Russian, sm:Samoan, gd:Scottish Gaelic, sr:Serbian, sn:Shona, sd:Sindhi, si:Sinhala, sk:Slovak, sl:Slovenian, so:Somali, sx:Sotho, es:Spanish, su:Sundanese, sw:Swahili, sv:Swedish, tl:Tagalog, tg:Tajiki, ta:Tamil, te:Telugu, th:Thai, tr:Turkish, uk:Ukrainian, ur:Urdu, uz:Uzbek, vi:Vietnamese, cy:Welsh, xh:Xosa, yi:Yiddish, yo:Yoruba, zu:Zulu"
+  "langlist": {
+    "message": "af:afrikaans, sq:albanian, am:amharic, ar:arabic, hy:armenian, az:azerbaijani, eu:basque, be:belarusian, bn:bengali, bs:bosnian, bg:bulgarian, ca:catalan, ceb:cebuano, ny:chewa, zh-cn:chinese (prc), zh-tw:chinese (taiwan), co:corsican, hr:croatian, cs:czech, da:danish, nl:dutch, en:english, eo:esperanto, et:estonian, fi:finnish, fr:french, fy:frisian, gl:galician, ka:georgian, de:german, el:greek, gu:gujarati, ht:haitian, ha:hausa, haw:hawaiian, he:hebrew, hi:hindi, hu:hungarian, is:icelandic, ig:igbo, id:indonesian, ga:irish, it:italian, ja:japanese, jv:javanese, kn:kannada, kk:kazakh, km:khmer, ky:kirghiz, ko:korean, ku:kurdish, lo:laotian, la:latin, lv:latvian, lt:lithuanian, lb:luxembourgish, mk:macedonian, mg:malagasy, ms:malay, ml:malayalam, mt:maltese, mi:maori, mr:marathi, mn:mongolian, hmn:monk, my:myanmar, ne:nepali, no:norwegian, fa:persian, pl:polish, pt:portuguese, pa:punjabi, ps:pushto, ro:romanian, ru:russian, sm:samoan, gd:scottish gaelic, sr:serbian, sn:shona, sd:sindhi, si:sinhala, sk:slovak, sl:slovenian, so:somali, sx:sotho, es:spanish, su:sundanese, sw:swahili, sv:swedish, tl:tagalog, tg:tajiki, ta:tamil, te:telugu, th:thai, tr:turkish, uk:ukrainian, ur:urdu, uz:uzbek, vi:vietnamese, cy:welsh, xh:xosa, yi:yiddish, yo:yoruba, zu:zulu"
   },
-  "allLangLabel": {
-    "message": "All languages"
+  "alllanglabel": {
+    "message": "all languages"
   },
-  "recentLangLabel": {
-    "message": "Recent languages"
+  "recentlanglabel": {
+    "message": "recent languages"
   },
-  "settingsLabel": {
-    "message": "Settings"
+  "settingslabel": {
+    "message": "settings"
   },
-  "generalLabel": {
-    "message": "General"
+  "generallabel": {
+    "message": "general"
   },
-  "targetLangCaptionLabel": {
-    "message": "Select the default target language."
+  "targetlangcaptionlabel": {
+    "message": "select the default target language."
   },
-  "webPageLabel": {
-    "message": "Web page"
+  "vebpagelabel": {
+    "message": "veb page"
   },
-  "ifShowCandidateLabel": {
-    "message": "Show translation candidates"
+  "ifsho_candidatelabel": {
+    "message": "sho translation candidates"
   },
-  "ifShowCandidateCaptionLabel": {
-    "message": "Show multiple translation candidates when a single word is translated."
+  "ifsho_candidatecaptionlabel": {
+    "message": "sho multiple translation candidates vhen a single vord is translated."
   },
-  "whenSelectTextLabel": {
-    "message": "Behavior when selecting text"
+  "vhenselecttekstlabel": {
+    "message": "behavior vhen selecting text"
   },
-  "ifAutoTranslateLabel": {
-    "message": "Display translation panel"
+  "ifautotranslatelabel": {
+    "message": "display translation panel"
   },
-  "ifAutoTranslateCaptionLabel": {
-    "message": "Directly display the translation panel without displaying the button."
+  "ifautotranslatecaptionlabel": {
+    "message": "directly display the translation panel vithout displaying the button."
   },
-  "ifShowButtonLabel": {
-    "message": "Display translation button"
+  "ifsho_buttonlabel": {
+    "message": "display translation button"
   },
-  "ifShowButtonCaptionLabel": {
-    "message": "Display the translation button to open the panel when clicked."
+  "ifsho_buttoncaptionlabel": {
+    "message": "display the translation button to open the panel vhen clicked."
   },
-  "dontshowbuttonlabel": {
-    "message": "Don't display button or panel"
+  "dontsho_buttonlabel": {
+    "message": "don't display button or panel"
   },
-  "dontshowbuttonCaptionlabel": {
-    "message": "Don't display the translation button or the translation panel."
+  "dontsho_buttoncaptionlabel": {
+    "message": "don't display the translation button or the translation panel."
   },
-  "ifCheckLangLabel": {
-    "message": "Do not display the button if translation is not required"
+  "ifchecklanglabel": {
+    "message": "do not display the button if translation is not required"
   },
-  "ifCheckLangCaptionLabel": {
-    "message": "Detects the language of the selected text, and if it is the same as the target language, the button is not displayed."
+  "ifchecklangcaptionlabel": {
+    "message": "detects the language of the selected text, and if it is the same as the target language, the button is not displayed."
   },
-  "ifChangeSecondLangOnPageCaptionLabel": {
-    "message": "Detects the language of the selected text, and if it is the same as the default target language, translate it into the second language."
+  "ifchangesecondlangonpagecaptionlabel": {
+    "message": "detects the language of the selected text, and if it is the same as the default target language, translate it into the second language."
   },
-  "disableTranslationLabel": {
-    "message": "Disable translation"
+  "disabletranslationlabel": {
+    "message": "disable translation"
   },
-  "isDisabledInTextFieldsLabel": {
-    "message": "Disable translation in text fields"
+  "isdisabledintekstfieldslabel": {
+    "message": "disable translation in text fields"
   },
-  "isDisabledInTextFieldsCaptionLabel": {
-    "message": "Don't display translation button or panel when selecting text in a text field."
+  "isdisabledintextfieldscaptionlabel": {
+    "message": "don't display translation button or panel vhen selecting text in a text field."
   },
-  "isDisabledInCodeElementLabel": {
-    "message": "Disable translation in code tags"
+  "isdisabledincodeelementlabel": {
+    "message": "disable translation in code tags"
   },
-  "isDisabledInCodeElementCaptionLabel": {
-    "message": "Don't display translation button or panel when selecting text in code tag."
+  "isdisabledincodeelementcaptionlabel": {
+    "message": "don't display translation button or panel vhen selecting text in code tag."
   },
-  "ifOnlyTranslateWhenModifierKeyPressedLabel": {
-    "message": "Translate on modifier key pressed"
+  "ifonlytranslatevhenmodifierkeypressedlabel": {
+    "message": "translate on modifier key pressed"
   },
-  "ifOnlyTranslateWhenModifierKeyPressedCaptionLabel": {
-    "message": "Only display translation on specified modifier key pressed."
+  "ifonlytranslatevhenmodifierkeypressedcaptionlabel": {
+    "message": "only display translation on specified modifier key pressed."
   },
-  "modifierKeyLabel": {
-    "message": "Modifier Key"
+  "modifierkeylabel": {
+    "message": "modifier key"
   },
-  "shiftLabel": {
-    "message": "Shift"
+  "shiftlabel": {
+    "message": "shift"
   },
-  "ctrlLabel": {
-    "message": "Ctrl"
+  "ctrllabel": {
+    "message": "ctrl"
   },
-  "altLabel": {
-    "message": "Alt"
+  "altlabel": {
+    "message": "alt"
   },
-  "cmdLabel": {
-    "message": "Command"
+  "cmdlabel": {
+    "message": "command"
   },
-  "disableUrlListLabel": {
-    "message": "URL list to disable translation"
+  "disableurllistlabel": {
+    "message": "url list to disable translation"
   },
-  "disableUrlListCaptionLabel": {
-    "message": "If the page URL matches the list, translation on the web page is disabled. The list allows \"*\" wildcards."
+  "disableurllistcaptionlabel": {
+    "message": "if the page url matches the list, translation on the web page is disabled. the list allows \"*\" wildcards."
   },
-  "toolbarLabel": {
-    "message": "Toolbar popup"
+  "toolbarlabel": {
+    "message": "toolbar popup"
   },
-  "ifChangeSecondLangLabel": {
-    "message": "Automatically switch to the second language"
+  "ifchangesecondlanglabel": {
+    "message": "automatically switch to the second language"
   },
-  "ifChangeSecondLangCaptionLabel": {
-    "message": "Detects the language of the input text, and if it is the same as the default target language, translate it into the second language."
+  "ifchangesecondlangcaptionlabel": {
+    "message": "detects the language of the input text, and if it is the same as the default target language, translate it into the second language."
   },
-  "secondTargetLangLabel": {
-    "message": "Second language"
+  "secondtargetlanglabel": {
+    "message": "second language"
   },
-  "secondTargetLangCaptionLabel": {
-    "message": "Select the second target language."
+  "secondtargetlangcaptionlabel": {
+    "message": "select the second target language."
   },
-  "ignoredDocumentLangLabel": {
-    "message": "Disable translation by lang attribute"
+  "ignoreddocumentlanglabel": {
+    "message": "disable translation by lang attribute"
   },
-  "ignoredDocumentLangCaptionLabel": {
-    "message": "Disable translation if the lang attribute in the html element of the page matches the list. Enter comma-separated language tags."
+  "ignoreddocumentlangcaptionlabel": {
+    "message": "disable translation if the lang attribute in the html element of the page matches the list. enter comma-separated language tags."
   },
-  "waitTimeLabel": {
-    "message": "Waiting time to translate"
+  "vaittimelabel": {
+    "message": "vaiting time to translate"
   },
-  "waitTimeCaptionLabel": {
-    "message": "Specify the waiting time from the input of a character to the start of translation. (millisecond)"
+  "vaittimecaptionlabel": {
+    "message": "specify the vaiting time from the input of a character to the start of translation. (millisecond)"
   },
-  "waitTime2CaptionLabel": {
-    "message": "If you translate it many times in a short time, it may become unusable for a while."
+  "vaittime2captionlabel": {
+    "message": "if you translate it many times in a short time, it may become unusable for a while."
   },
-  "menuLabel": {
-    "message": "Context menu"
+  "menulabel": {
+    "message": "context menu"
   },
-  "ifShowMenuLabel": {
-    "message": "Display the context menu"
+  "ifsho_menulabel": {
+    "message": "display the context menu"
   },
-  "ifShowMenuCaptionLabel": {
-    "message": "Add items to the context menu displayed when right clicking on the web page or the tab."
+  "ifsho_menucaptionlabel": {
+    "message": "add items to the context menu displayed vhen right clicking on the web page or the tab."
   },
-  "styleLabel": {
-    "message": "Style"
+  "stylelabel": {
+    "message": "style"
   },
-  "themeLabel": {
-    "message": "Theme"
+  "themelabel": {
+    "message": "theme"
   },
-  "themeCaptionLabel": {
-    "message": "Specify the color scheme."
+  "themecaptionlabel": {
+    "message": "specify the color scheme."
   },
-  "lightLabel": {
-    "message": "Light"
+  "lightlabel": {
+    "message": "light"
   },
-  "darkLabel": {
-    "message": "Dark"
+  "darklabel": {
+    "message": "dark"
   },
-  "buttonStyleLabel": {
-    "message": "Translation button"
+  "buttonstylelabel": {
+    "message": "translation button"
   },
-  "buttonStyleCaptionLabel": {
-    "message": "Specify the style of the translation button displayed on the web page."
+  "buttonstylecaptionlabel": {
+    "message": "specify the style of the translation button displayed on the web page."
   },
-  "buttonSizeLabel": {
-    "message": "Size"
+  "buttonsizelabel": {
+    "message": "size"
   },
-  "buttonPositionLabel": {
-    "message": "Display position"
+  "buttonpositionlabel": {
+    "message": "display position"
   },
-  "topRightLabel": {
-    "message": "Top right"
+  "toprightlabel": {
+    "message": "top right"
   },
-  "bottomRightLabel": {
-    "message": "Bottom right"
+  "bottomrightlabel": {
+    "message": "bottom right"
   },
-  "topLeftLabel": {
-    "message": "Top left"
+  "topleftlabel": {
+    "message": "top left"
   },
-  "bottomLeftLabel": {
-    "message": "Bottom left"
+  "bottomleftlabel": {
+    "message": "bottom left"
   },
-  "topLabel": {
-    "message": "Top"
+  "toplabel": {
+    "message": "top"
   },
-  "bottomLabel": {
-    "message": "Bottom"
+  "bottomlabel": {
+    "message": "bottom"
   },
-  "leftLabel": {
-    "message": "Left"
+  "leftlabel": {
+    "message": "left"
   },
-  "rightLabel": {
-    "message": "Right"
+  "rightlabel": {
+    "message": "right"
   },
-  "positionOffsetLabel": {
-    "message": "Display position - Offset"
+  "positionoffsetlabel": {
+    "message": "display position - offset"
   },
-  "panelStyleLabel": {
-    "message": "Translation panel"
+  "panelstylelabel": {
+    "message": "translation panel"
   },
-  "panelStyleCaptionLabel": {
-    "message": "Specify the style of the translation panel displayed on the web page."
+  "panelstylecaptionlabel": {
+    "message": "specify the style of the translation panel displayed on the web page."
   },
-  "widthLabel": {
-    "message": "Width"
+  "vidthlabel": {
+    "message": "width"
   },
-  "heightLabel": {
-    "message": "Height"
+  "heightlabel": {
+    "message": "height"
   },
-  "fontSizeLabel": {
-    "message": "Font size"
+  "fontsizelabel": {
+    "message": "font size"
   },
-  "referencePointLabel": {
-    "message": "Display position - Reference point"
+  "referencepointlabel": {
+    "message": "display position - reference point"
   },
-  "bottomSelectedTextLabel": {
-    "message": "Bottom of selected text"
+  "bottomselectedtekstlabel": {
+    "message": "bottom of selected text"
   },
-  "topSelectedTextLabel": {
-    "message": "Top of selected text"
+  "topselectedtekstlabel": {
+    "message": "top of selected text"
   },
-  "clickedPointLabel": {
-    "message": "Clicked point"
+  "clickedpointlabel": {
+    "message": "clicked point"
   },
-  "displayDirectionLabel": {
-    "message": "Display position - Direction"
+  "displaydirectionlabel": {
+    "message": "display position - direction"
   },
-  "resultFontColorLabel": {
-    "message": "Font color of translation result"
+  "resultfontcolorlabel": {
+    "message": "font color of translation result"
   },
-  "candidateFontColorLabel": {
-    "message": "Font color of translation candidates"
+  "candidatefontcolorlabel": {
+    "message": "font color of translation candidates"
   },
-  "bgColorLabel": {
-    "message": "Background color"
+  "bgcolorlabel": {
+    "message": "background color"
   },
-  "otherLabel": {
-    "message": "Other"
+  "otherlabel": {
+    "message": "other"
   },
-  "isShowOptionsPageWhenUpdatedLabel": {
-    "message": "Display option page when updating"
+  "is_sho_options_page_vhen_updatedlabel": {
+    "message": "display option page vhen updating"
   },
-  "isShowOptionsPageWhenUpdatedCaptionLabel": {
-    "message": "Display the options page when hnskrit is updated. You can know the update contents quickly."
+  "is_sho_options_page_vhen_updated_caption_label": {
+    "message": "display the options page vhen hnskrit is updated. you can knou the update contents quickly."
   },
-  "isDebugModeLabel": {
-    "message": "Enable debug mode"
+  "isdebugmodelabel": {
+    "message": "enable debug mode"
   },
-  "isDebugModeCaptionLabel": {
-    "message": "When debug mode is enabled, the log is output to the debugger."
+  "isdebugmodecaptionlabel": {
+    "message": "vhen debug mode is enabled, the log is output to the debugger."
   },
-  "exportSettingsLabel": {
-    "message": "Export settings"
+  "eksportsettingslabel": {
+    "message": "eksport settings"
   },
-  "exportSettingsCaptionLabel": {
-    "message": "Save the settings as a json file on the computer."
+  "eksportsettingscaptionlabel": {
+    "message": "save the settings as a json file on the computer."
   },
-  "exportButtonLabel": {
-    "message": "Export"
+  "eksportbuttonlabel": {
+    "message": "eksport"
   },
-  "importSettingsLabel": {
-    "message": "Import Settings"
+  "importsettingslabel": {
+    "message": "import settings"
   },
-  "importSettingsCaptionLabel": {
-    "message": "Load the settings file saved on the computer."
+  "importsettingscaptionlabel": {
+    "message": "load the settings file saved on the computer."
   },
-  "importButtonLabel": {
-    "message": "Import"
+  "importbuttonlabel": {
+    "message": "import"
   },
-  "resetSettingsLabel": {
-    "message": "Reset settings"
+  "resetsettingslabel": {
+    "message": "reset settings"
   },
-  "resetSettingsCaptionLabel": {
-    "message": "Restore all settings to default."
+  "resetsettingscaptionlabel": {
+    "message": "restore all settings to default."
   },
-  "resetSettingsButtonLabel": {
-    "message": "Reset"
+  "resetsettingsbuttonlabel": {
+    "message": "reset"
   },
-  "shortcutsLabel": {
-    "message": "Shortcuts"
+  "shortcutslabel": {
+    "message": "shortcuts"
   },
-  "keyboardShortcutsLabel": {
-    "message": "Keyboard shortcuts"
+  "keyboardshortcutslabel": {
+    "message": "keyboard shortcuts"
   },
-  "setKeyboardShortCutsMessage": {
-    "message": "Set keyboard shortcuts."
+  "setkeyboardshortcutsmessage": {
+    "message": "set keyboard shortcuts."
   },
-  "typeShortcutMessage": {
-    "message": "Type a shortcut"
+  "typeshortcutmessage": {
+    "message": "type a shortcut"
   },
-  "typeLetterMessage": {
-    "message": "Type a letter"
+  "typelettermessage": {
+    "message": "type a letter"
   },
-  "includeModifierKeysMessage": {
-    "message": "Include either Ctrl or Alt"
+  "includemodifierkeysmessage": {
+    "message": "include either ctrl or alt"
   },
-  "includeMacModifierKeysMessage": {
-    "message": "Include either Command, Ctrl or Alt"
+  "includemacmodifierkeysmessage": {
+    "message": "include either command, ctrl or alt"
   },
-  "invalidLetterMessage": {
-    "message": "The letter can not be used"
+  "invalidlettermessage": {
+    "message": "the letter can not be used"
   },
-  "invalidShortcutMessage": {
-    "message": "The shortcut can not be used"
+  "invalidshortcutmessage": {
+    "message": "the shortcut can not be used"
   },
   "clear": {
-    "message": "Clear"
+    "message": "clear"
   },
   "reset": {
-    "message": "Reset"
+    "message": "reset"
   },
-  "informationLabel": {
-    "message": "Information"
+  "informationlabel": {
+    "message": "information"
   },
-  "backersLabel": {
-    "message": "Backers"
+  "backerslabel": {
+    "message": "backers"
   },
-  "licenseLabel": {
-    "message": "License"
+  "licenselabel": {
+    "message": "license"
   },
-  "donationLabel": {
-    "message": "Please make a donation"
+  "donationlabel": {
+    "message": "please make a donation"
   },
-  "donationCaptionLabel": {
-    "message": "Thank you for using hnskrit.<br>Your support will be a big encouragement, as I continue to develop the add-on.<br>If you like hnskrit, I would be pleased if you could consider donating."
+  "donationcaptionlabel": {
+    "message": "thank you for using hnskrit.<br>your support will be a big encouragement, as i continue to develop the add-on.<br>if you like hnskrit, i would be pleased if you could consider donating."
   },
-  "amazonTitleLabel": {
-    "message": "amazon.co.jp eGift Cards"
+  "amazontitlelabel": {
+    "message": "amazon.co.jp egift cards"
   },
-  "sponsorsLabel": {
-    "message": "Sponsors"
+  "sponsorslabel": {
+    "message": "sponsors"
   },
-  "addonPageLabel": {
-    "message": "Add-on page"
+  "addonpagelabel": {
+    "message": "add-on page"
   },
-  "extensionPageLabel": {
-    "message": "Extension page"
+  "ekstensionpagelabel": {
+    "message": "ektension page"
   },
-  "privacyPolicyLabel": {
-    "message": "Privacy policy"
+  "privacypolicylabel": {
+    "message": "privacy policy"
   },
-  "amazonUrl": {
-    "message": "https://www.amazon.co.jp/dp/B004N3APGO?language=en_US"
+  "amazonurl": {
+    "message": "https://amazon.co.jp/dp/b004n3apgo?language=en_us"
   },
-  "addonUrl": {
-    "message": "https://addons.mozilla.org/en-US/firefox/addon/hnskrit/?src=optionpage"
+  "addonurl": {
+    "message": "https://addons.mozilla.org/en-us/firefox/addon/hnskrit/?src=optionpage"
   },
-  "networkError": {
-    "message": "Error: Check network connection status."
+  "networkerror": {
+    "message": "error: check netvork connection status."
   },
-  "unavailableError": {
-    "message": "Error: Service usage limit reached. Please wait a while and try again."
+  "unavailableerror": {
+    "message": "error: service usage limit reached. please vait a while and try again."
   },
-  "unknownError": {
-    "message": "Error: Unknown error"
+  "unknownerror": {
+    "message": "error: unknoun error"
   },
-  "translatePageMenu": {
-    "message": "Translate this page"
+  "translatepagemenu": {
+    "message": "translate this page"
   },
-  "translateTextMenu": {
-    "message": "Translate selected text"
+  "translatetekstmenu": {
+    "message": "translate selected text"
   },
-  "translateLinkMenu": {
-    "message": "Translate selected link"
+  "translatelinkmenu": {
+    "message": "translate selected link"
   },
-  "openPopupDescription": {
-    "message": "Open toolbar popup"
+  "openpopupdescription": {
+    "message": "open toolbar popup"
   }
 }

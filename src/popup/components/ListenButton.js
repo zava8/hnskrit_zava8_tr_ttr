@@ -25,7 +25,7 @@ export default props => {
     <button
       className="listenButton"
       onClick={() => playAudio(text, lang)}
-      title={browser.i18n.getMessage("listenLabel")}
+      title={browser.i18n.getMessage("listenlabel")}
     >
       <SpeakerIcon />
     </button>

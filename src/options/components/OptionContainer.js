@@ -127,13 +127,13 @@ export default props => {
       break;
   }
 
-  const shouldShow = props.shouldShow == undefined || props.shouldShow;
+  const shouldsho_ = props.shouldsho_ == undefined || props.shouldsho_;
 
   return (
-    shouldShow && (
+    shouldsho_ && (
       <li className={`optionContainer ${props.updated ? "updated" : ""} ${props.new ? "new" : ""}`}>
         {props.hr && <hr />}
-        <div className={`optionElement ${type == "textarea" ? "showColumn" : ""}`}>
+        <div className={`optionElement ${type == "textarea" ? "sho_Column" : ""}`}>
           <div className="optionText">
             <label className="noHover" htmlFor={formId ? formId : null}>
               <p>{title ? (props.useRawTitle ? title : browser.i18n.getMessage(title)) : ""}</p>

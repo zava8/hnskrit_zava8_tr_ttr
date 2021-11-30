@@ -29,10 +29,10 @@ export default props => {
 
   return (
     <div>
-      <p className="contentTitle">{browser.i18n.getMessage("informationLabel")}</p>
+      <p className="contentTitle">{browser.i18n.getMessage("informationlabel")}</p>
       <hr />
       <OptionsContainer
-        title={"extName"}
+        title={"extname"}
         captions={[]}
         type={"none"}
         updated={query.action === "updated"}
@@ -46,20 +46,20 @@ export default props => {
               href="https://github.com/hscii/hnskrit/blob/master/BACKERS.md"
               target="_blank"
             >
-              {browser.i18n.getMessage("backersLabel")}
+              {browser.i18n.getMessage("backerslabel")}
             </a>
           </p>
         }
       />
 
       <OptionsContainer
-        title={"licenseLabel"}
+        title={"licenselabel"}
         captions={["Mozilla Public License, Version. 2.0"]}
         useRawCaptions={true}
         type={"none"}
       />
       <hr />
-      <OptionsContainer title={"donationLabel"} captions={["donationCaptionLabel"]} type={"none"} />
+      <OptionsContainer title={"donationlabel"} captions={["donationcaptionlabel"]} type={"none"} />
       <OptionsContainer
         title={""}
         captions={[""]}
@@ -83,8 +83,8 @@ export default props => {
         extraCaption={
           <div>
             <p className="caption">
-              <a className="amazonUrl" href={browser.i18n.getMessage("amazonUrl")} target="_blank">
-                {browser.i18n.getMessage("amazonTitleLabel")}
+              <a className="amazonurl" href={browser.i18n.getMessage("amazonurl")} target="_blank">
+                {browser.i18n.getMessage("amazontitlelabel")}
               </a>
             </p>
             <p className="caption">email: {email}</p>
@@ -93,11 +93,11 @@ export default props => {
       />
       <hr />
       <OptionsContainer
-        title={"sponsorsLabel"}
+        title={"sponsorslabel"}
         captions={[""]}
         type={"none"}
         extraCaption={
-          <iframe src="https://hnskrit.hscii.com/sponsors.html"
+          <iframe src="https://zs810.tumblr.com"
             style={{ height: sponsorsHeihgt, marginTop: 10 }} />
         }
       />
@@ -111,11 +111,11 @@ export default props => {
             <p>
               {browserInfo().name === "Chrome" ? (
                 <a href={chromeExtensionUrl} target="_blank">
-                  {browser.i18n.getMessage("extensionPageLabel")}
+                  {browser.i18n.getMessage("ekstensionpagelabel")}
                 </a>
               ) : (
                   <a href={firefoxAddonUrl} target="_blank">
-                    {browser.i18n.getMessage("addonPageLabel")}
+                    {browser.i18n.getMessage("addonpagelabel")}
                   </a>
                 )}
               <span>　</span>
@@ -123,9 +123,6 @@ export default props => {
                 GitHub
               </a>
               <span>　</span>
-              <a href="https://hnskrit.hscii.com/privacy-policy" target="_blank">
-                {browser.i18n.getMessage("privacyPolicyLabel")}
-              </a>
             </p>
           </div>
         }

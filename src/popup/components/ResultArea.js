@@ -17,7 +17,7 @@ const splitLine = text => {
 export default props => {
   const { inputText, targetLang, langZtr, ztrText, candidateText, statusText } = props;
   const isError = statusText !== "OK";
-  const shouldShowCandidate = getSettings("ifShowCandidate");
+  const shouldsho_Candidate = getSettings("ifsho_Candidate");
   // var t = new transliterator();
   // function ttrdom() {t.transliterate_elem_content(document.body);}
   const handleLinkClick = () => {
@@ -32,11 +32,11 @@ export default props => {
   return (
     <div id="resultArea">
       <p className="resultText" dir="auto">{splitLine(ztrText)}</p>
-      {shouldShowCandidate && <p className="candidateText" dir="auto">{splitLine(candidateText)}</p>}
+      {shouldsho_Candidate && <p className="candidateText" dir="auto">{splitLine(candidateText)}</p>}
       {isError && <p className="error">{getErrorMessage(statusText)}</p>}
       {isError && (
         <p className="translateLink">
-          <a onClick={handleLinkClick}>{browser.i18n.getMessage("openInGoogleLabel")}</a>
+          <a onClick={handleLinkClick}>{browser.i18n.getMessage("open_in_google_label")}</a>
         </p>
       )}
       <div className="mediaButtons"> <CopyButton text={ztrText} /> <ListenButton text={ztrText} lang="en" /> </div>

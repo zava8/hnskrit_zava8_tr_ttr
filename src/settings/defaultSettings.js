@@ -12,77 +12,77 @@ const getDefaultLangs = () => {
   return { targetLang, secondTargetLang };
 };
 
-const langListOptions = generateLangOptions();
+const langlistOptions = generateLangOptions();
 const defaultLangs = getDefaultLangs();
 const getTheme = () =>
   window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
 
 export default [
   {
-    category: "generalLabel",
+    category: "generallabel",
     elements: [
       {
         id: "targetLang",
-        title: "targetLangLabel",
-        captions: ["targetLangCaptionLabel"],
+        title: "targetlanglabel",
+        captions: ["targetlangcaptionlabel"],
         type: "select",
         default: defaultLangs.targetLang,
-        options: langListOptions,
+        options: langlistOptions,
         useRawOptionName: true
       },
       {
         id: "secondTargetLang",
-        title: "secondTargetLangLabel",
-        captions: ["secondTargetLangCaptionLabel"],
+        title: "secondtargetlanglabel",
+        captions: ["secondtargetlangcaptionlabel"],
         type: "select",
         default: defaultLangs.secondTargetLang,
-        options: langListOptions,
+        options: langlistOptions,
         useRawOptionName: true
       },
       {
-        id: "ifShowCandidate",
-        title: "ifShowCandidateLabel",
-        captions: ["ifShowCandidateCaptionLabel"],
+        id: "ifsho_Candidate",
+        title: "ifsho_candidatelabel",
+        captions: ["ifsho_candidatecaptionlabel"],
         type: "checkbox",
         default: true
       }
     ]
   },
   {
-    category: "webPageLabel",
+    category: "vebpagelabel",
     elements: [
       {
-        id: "whenSelectText",
-        title: "whenSelectTextLabel",
+        id: "vhenSelectText",
+        title: "vhenselecttekstlabel",
         captions: [],
         type: "none",
-        default: "showButton",
+        default: "sho_Button",
         childElements: [
           {
-            id: "whenSelectText",
-            title: "ifShowButtonLabel",
-            captions: ["ifShowButtonCaptionLabel"],
+            id: "vhenSelectText",
+            title: "ifsho_buttonlabel",
+            captions: ["ifsho_buttoncaptionlabel"],
             type: "radio",
-            value: "showButton"
+            value: "sho_Button"
           },
           {
-            id: "whenSelectText",
-            title: "ifAutoTranslateLabel",
-            captions: ["ifAutoTranslateCaptionLabel"],
+            id: "vhenSelectText",
+            title: "ifautotranslatelabel",
+            captions: ["ifautotranslatecaptionlabel"],
             type: "radio",
-            value: "showPanel"
+            value: "sho_Panel"
           },
           {
-            id: "whenSelectText",
-            title: "dontShowButtonLabel",
-            captions: ["dontShowButtonCaptionLabel"],
+            id: "vhenSelectText",
+            title: "dontsho_buttonlabel",
+            captions: ["dontsho_buttoncaptionlabel"],
             type: "radio",
-            value: "dontShowButton"
+            value: "dontsho_Button"
           },
           {
             id: "ifCheckLang",
-            title: "ifCheckLangLabel",
-            captions: ["ifCheckLangCaptionLabel"],
+            title: "ifchecklanglabel",
+            captions: ["ifchecklangcaptionlabel"],
             type: "checkbox",
             default: true,
             hr: true
@@ -90,33 +90,33 @@ export default [
         ]
       },
       {
-        id: "ifOnlyTranslateWhenModifierKeyPressed",
-        title: "ifOnlyTranslateWhenModifierKeyPressedLabel",
-        captions: ["ifOnlyTranslateWhenModifierKeyPressedCaptionLabel"],
+        id: "ifOnlyTranslatevhenModifierKeyPressed",
+        title: "ifonlytranslatevhenmodifierkeypressedlabel",
+        captions: ["ifonlytranslatevhenmodifierkeypressedcaptionlabel"],
         type: "checkbox",
         default: false,
         childElements: [
           {
             id: "modifierKey",
-            title: "modifierKeyLabel",
+            title: "modifierkeylabel",
             captions: [],
             type: "select",
             default: "shift",
             options: [
               {
-                name: "shiftLabel",
+                name: "shiftlabel",
                 value: "shift"
               },
               {
-                name: "ctrlLabel",
+                name: "ctrllabel",
                 value: "ctrl"
               },
               {
-                name: "altLabel",
+                name: "altlabel",
                 value: "alt"
               },
               {
-                name: "cmdLabel",
+                name: "cmdlabel",
                 value: "cmd"
               }]
           }
@@ -124,42 +124,42 @@ export default [
       },
       {
         id: "ifChangeSecondLangOnPage",
-        title: "ifChangeSecondLangLabel",
-        captions: ["ifChangeSecondLangOnPageCaptionLabel"],
+        title: "ifchangesecondlanglabel",
+        captions: ["ifchangesecondlangonpagecaptionlabel"],
         type: "checkbox",
         default: false
       },
       {
-        title: "disableTranslationLabel",
+        title: "disabletranslationlabel",
         captions: [],
         type: "none",
         childElements: [
           {
             id: "isDisabledInTextFields",
-            title: "isDisabledInTextFieldsLabel",
-            captions: ["isDisabledInTextFieldsCaptionLabel"],
+            title: "isdisabledintekstfieldslabel",
+            captions: ["isdisabledintextfieldscaptionlabel"],
             type: "checkbox",
             default: false
           },
           {
             id: "isDisabledInCodeElement",
-            title: "isDisabledInCodeElementLabel",
-            captions: ["isDisabledInCodeElementCaptionLabel"],
+            title: "isdisabledincodeelementlabel",
+            captions: ["isdisabledincodeelementcaptionlabel"],
             type: "checkbox",
             default: false
           },
           {
             id: "ignoredDocumentLang",
-            title: "ignoredDocumentLangLabel",
-            captions: ["ignoredDocumentLangCaptionLabel"],
+            title: "ignoreddocumentlanglabel",
+            captions: ["ignoreddocumentlangcaptionlabel"],
             type: "text",
             default: "",
             placeholder: "en, ru, zh"
           },
           {
             id: "disableUrlList",
-            title: "disableUrlListLabel",
-            captions: ["disableUrlListCaptionLabel"],
+            title: "disableurllistlabel",
+            captions: ["disableurllistcaptionlabel"],
             type: "textarea",
             default: "",
             placeholder: "https://example.com/*\nhttps://example.net/*"
@@ -169,12 +169,12 @@ export default [
     ]
   },
   {
-    category: "toolbarLabel",
+    category: "toolbarlabel",
     elements: [
       {
-        id: "waitTime",
-        title: "waitTimeLabel",
-        captions: ["waitTimeCaptionLabel", "waitTime2CaptionLabel"],
+        id: "vaitTime",
+        title: "vaittimelabel",
+        captions: ["vaittimecaptionlabel", "vaittime2captionlabel"],
         type: "number",
         min: 0,
         placeholder: 500,
@@ -182,53 +182,53 @@ export default [
       },
       {
         id: "ifChangeSecondLang",
-        title: "ifChangeSecondLangLabel",
-        captions: ["ifChangeSecondLangCaptionLabel"],
+        title: "ifchangesecondlanglabel",
+        captions: ["ifchangesecondlangcaptionlabel"],
         type: "checkbox",
         default: true
       }
     ]
   },
   {
-    category: "menuLabel",
+    category: "menulabel",
     elements: [
       {
-        id: "ifShowMenu",
-        title: "ifShowMenuLabel",
-        captions: ["ifShowMenuCaptionLabel"],
+        id: "ifsho_Menu",
+        title: "ifsho_menulabel",
+        captions: ["ifsho_menucaptionlabel"],
         type: "checkbox",
         default: true
       }
     ]
   },
   {
-    category: "styleLabel",
+    category: "stylelabel",
     elements: [
       {
         id: "theme",
-        title: "themeLabel",
-        captions: ["themeCaptionLabel"],
+        title: "themelabel",
+        captions: ["themecaptionlabel"],
         type: "select",
         default: getTheme(),
         options: [
           {
-            name: "lightLabel",
+            name: "lightlabel",
             value: "light"
           },
           {
-            name: "darkLabel",
+            name: "darklabel",
             value: "dark"
           }
         ]
       },
       {
-        title: "buttonStyleLabel",
-        captions: ["buttonStyleCaptionLabel"],
+        title: "buttonstylelabel",
+        captions: ["buttonstylecaptionlabel"],
         type: "none",
         childElements: [
           {
             id: "buttonSize",
-            title: "buttonSizeLabel",
+            title: "buttonsizelabel",
             captions: [],
             type: "number",
             min: 1,
@@ -237,48 +237,48 @@ export default [
           },
           {
             id: "buttonDirection",
-            title: "displayDirectionLabel",
+            title: "displaydirectionlabel",
             captions: [],
             type: "select",
             default: "bottomRight",
             options: [
               {
-                name: "topLabel",
+                name: "toplabel",
                 value: "top"
               },
               {
-                name: "bottomLabel",
+                name: "bottomlabel",
                 value: "bottom"
               },
               {
-                name: "rightLabel",
+                name: "rightlabel",
                 value: "right"
               },
               {
-                name: "leftLabel",
+                name: "leftlabel",
                 value: "left"
               },
               {
-                name: "topRightLabel",
+                name: "toprightlabel",
                 value: "topRight"
               },
               {
-                name: "topLeftLabel",
+                name: "topleftlabel",
                 value: "topLeft"
               },
               {
-                name: "bottomRightLabel",
+                name: "bottomrightlabel",
                 value: "bottomRight"
               },
               {
-                name: "bottomLeftLabel",
+                name: "bottomleftlabel",
                 value: "bottomLeft"
               }
             ]
           },
           {
             id: "buttonOffset",
-            title: "positionOffsetLabel",
+            title: "positionoffsetlabel",
             captions: [],
             type: "number",
             default: 10,
@@ -287,13 +287,13 @@ export default [
         ]
       },
       {
-        title: "panelStyleLabel",
-        captions: ["panelStyleCaptionLabel"],
+        title: "panelstylelabel",
+        captions: ["panelstylecaptionlabel"],
         type: "none",
         childElements: [
           {
             id: "width",
-            title: "widthLabel",
+            title: "vidthlabel",
             captions: [],
             type: "number",
             min: 1,
@@ -302,7 +302,7 @@ export default [
           },
           {
             id: "height",
-            title: "heightLabel",
+            title: "heightlabel",
             captions: [],
             type: "number",
             min: 1,
@@ -311,7 +311,7 @@ export default [
           },
           {
             id: "fontSize",
-            title: "fontSizeLabel",
+            title: "fontsizelabel",
             captions: [],
             type: "number",
             min: 1,
@@ -320,69 +320,69 @@ export default [
           },
           {
             id: "panelReferencePoint",
-            title: "referencePointLabel",
+            title: "referencepointlabel",
             captions: [],
             type: "select",
             default: "bottomSelectedText",
             options: [
               {
-                name: "topSelectedTextLabel",
+                name: "topselectedtekstlabel",
                 value: "topSelectedText"
               },
               {
-                name: "bottomSelectedTextLabel",
+                name: "bottomselectedtekstlabel",
                 value: "bottomSelectedText"
               },
               {
-                name: "clickedPointLabel",
+                name: "clickedpointlabel",
                 value: "clickedPoint"
               }
             ]
           },
           {
             id: "panelDirection",
-            title: "displayDirectionLabel",
+            title: "displaydirectionlabel",
             captions: [],
             type: "select",
             default: "bottom",
             options: [
               {
-                name: "topLabel",
+                name: "toplabel",
                 value: "top"
               },
               {
-                name: "bottomLabel",
+                name: "bottomlabel",
                 value: "bottom"
               },
               {
-                name: "rightLabel",
+                name: "rightlabel",
                 value: "right"
               },
               {
-                name: "leftLabel",
+                name: "leftlabel",
                 value: "left"
               },
               {
-                name: "topRightLabel",
+                name: "toprightlabel",
                 value: "topRight"
               },
               {
-                name: "topLeftLabel",
+                name: "topleftlabel",
                 value: "topLeft"
               },
               {
-                name: "bottomRightLabel",
+                name: "bottomrightlabel",
                 value: "bottomRight"
               },
               {
-                name: "bottomLeftLabel",
+                name: "bottomleftlabel",
                 value: "bottomLeft"
               }
             ]
           },
           {
             id: "panelOffset",
-            title: "positionOffsetLabel",
+            title: "positionoffsetlabel",
             captions: [],
             type: "number",
             default: 10,
@@ -390,21 +390,21 @@ export default [
           },
           {
             id: "resultFontColor",
-            title: "resultFontColorLabel",
+            title: "resultfontcolorlabel",
             captions: [],
             type: "color",
             default: getTheme() === "light" ? "#000000" : "#e6e6e6"
           },
           {
             id: "candidateFontColor",
-            title: "candidateFontColorLabel",
+            title: "candidatefontcolorlabel",
             captions: [],
             type: "color",
             default: getTheme() === "light" ? "#737373" : "#aaaaaa"
           },
           {
             id: "bgColor",
-            title: "bgColorLabel",
+            title: "bgcolorlabel",
             captions: [],
             type: "color",
             default: getTheme() === "light" ? "#ffffff" : "#181818"
@@ -414,19 +414,19 @@ export default [
     ]
   },
   {
-    category: "otherLabel",
+    category: "otherlabel",
     elements: [
       {
-        id: "isShowOptionsPageWhenUpdated",
-        title: "isShowOptionsPageWhenUpdatedLabel",
-        captions: ["isShowOptionsPageWhenUpdatedCaptionLabel"],
+        id: "issho_OptionsPagevhenUpdated",
+        title: "is_sho_options_page_vhen_updatedlabel",
+        captions: ["is_sho_options_page_vhen_updated_caption_label"],
         type: "checkbox",
         default: true
       },
       {
         id: "isDebugMode",
-        title: "isDebugModeLabel",
-        captions: ["isDebugModeCaptionLabel"],
+        title: "isdebugmodelabel",
+        captions: ["isdebugmodecaptionlabel"],
         type: "checkbox",
         default: false
       }

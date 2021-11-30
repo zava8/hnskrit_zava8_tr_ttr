@@ -6,7 +6,7 @@ import "../styles/Footer.scss";
 
 
 export default class Footer extends Component {
-  constructor(props) { super(props); this.langList = generateLangOptions(); }
+  constructor(props) { super(props); this.langlist = generateLangOptions(); }
   handleLinkClick = async () => {
     const { tabUrl, targetLang} = this.props;
     const encodedUrl = encodeURIComponent(tabUrl);
@@ -17,16 +17,16 @@ export default class Footer extends Component {
     const { tabUrl, targetZtr} = this.props;
     let tab = await browser.tabs.query({ active: true });
     tab = tab[0];
-    console.log("in footer.js:handleZtrButtonClick: tab.id is : " + tab.id);
-    console.log("sending message to tab.id(" + tab.id + ") { message: targetZtr } vhere targetZtr is : " + targetZtr);
+    // console.log("in footer.js:handleZtrButtonClick: tab.id is : " + tab.id);
+    // console.log("sending message to tab.id(" + tab.id + ") { message: targetZtr } vhere targetZtr is : " + targetZtr);
     browser.tabs.sendMessage( tab.id, { message: targetZtr } ).catch(error => { console.log(error); });
   };
   handle_utrButtonClick = async () => {
     const { tabUrl, targetZtr} = this.props;
     let tab = await browser.tabs.query({ active: true });
     tab = tab[0];
-    console.log("in footer.js:handle_utrButtonClick: tab.id is : " + tab.id);
-    console.log("sending message to tab.id(" + tab.id + ") { message: utr }");
+    // console.log("in footer.js:handle_utrButtonClick: tab.id is : " + tab.id);
+    // console.log("sending message to tab.id(" + tab.id + ") { message: utr }");
     browser.tabs.sendMessage( tab.id, { message: "utr" } ).catch(error => { console.log(error); });
   };
   handleChange = e => { const lang = e.target.value; this.props.handleLangChange(lang); };
@@ -38,21 +38,21 @@ export default class Footer extends Component {
     return (
       <div id="footer">
         <div className="selectWrap">
-          <select id="langList" value={targetLang} onChange={this.handleChange} title={browser.i18n.getMessage("targetLangLabel")} >
-            <optgroup label={browser.i18n.getMessage("recentLangLabel")}>
-              {this.langList.filter(option => langHistory.includes(option.value))
+          <select id="langlist" value={targetLang} onChange={this.handleChange} title={browser.i18n.getMessage("targetlanglabel")} >
+            <optgroup label={browser.i18n.getMessage("recentlanglabel")}>
+              {this.langlist.filter(option => langHistory.includes(option.value))
                 .map(option => ( <option value={option.value} key={option.value}> {option.name} </option> ))}
             </optgroup>
-            <optgroup label={browser.i18n.getMessage("allLangLabel")}>
-              {this.langList.map(option => ( <option value={option.value} key={option.value}> {option.name} </option> ))}
+            <optgroup label={browser.i18n.getMessage("alllanglabel")}>
+              {this.langlist.map(option => ( <option value={option.value} key={option.value}> {option.name} </option> ))}
             </optgroup>
           </select>
         </div>
         <div className="translateLink">
-          {tabUrl && <a onClick={this.handleLinkClick}>{browser.i18n.getMessage("showLink")}</a>}
+          {tabUrl && <a onClick={this.handleLinkClick}>{browser.i18n.getMessage("sho_link")}</a>}
         </div>
         <div className="selectWrap">
-          <select id="id_tr_select" value={targetZtr} onChange={this.handleChange2} title={browser.i18n.getMessage("targetZtrLabel")} >
+          <select id="id_tr_select" value={targetZtr} onChange={this.handleChange2} title={browser.i18n.getMessage("targetztrlabel")} >
             <option value="sel">select ztr</option>
             <optgroup label="ascii5">
               <option id="unicode5_to_abc5" value="0">unicode5_to_abc5</option>
@@ -65,7 +65,7 @@ export default class Footer extends Component {
           </select>
         </div>
         <div className="translateLink">
-          {/* {tabUrl && <a onClick={this.handleZtrButtonClick}>{browser.i18n.getMessage("showLink")}</a>} */}
+          {/* {tabUrl && <a onClick={this.handleZtrButtonClick}>{browser.i18n.getMessage("sho_link")}</a>} */}
           <button type="button" id="transliterate" onClick={this.handleZtrButtonClick}>tr</button>
           <button type="button" id="untransliterate" onClick={this.handle_utrButtonClick}>utr</button>
         </div>
