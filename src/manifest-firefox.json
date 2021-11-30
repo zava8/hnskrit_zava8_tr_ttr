@@ -6,7 +6,7 @@
   "default_locale": "en",
   "applications": {
     "gecko": {
-      "id": "symbols-translate@zava8"
+      "id": "hnskrit@github.com_zava8_dounload"
     }
   },
   "permissions": [
