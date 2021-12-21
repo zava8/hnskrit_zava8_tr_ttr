@@ -1,9 +1,9 @@
 {
   "name": "hnskrit",
-  "version": "0.0.0",
+  "version": "1.0.2",
   "dependencies": {
     "browser-info": "^1.2.0",
-    "kvz-transliteration": "^1.0.6",
+    "kvz-transliteration": "^1.0.7",
     "loglevel": "^1.6.1",
     "query-string": "^6.1.0",
     "react": "^16.13.1",
